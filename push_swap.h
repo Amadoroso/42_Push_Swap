@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/02 17:52:09 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/02 18:01:22 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,8 @@ typedef struct s_int_node
 	int			integer;
 	s_int_node	*next;
 }			t_int_node;
+
+/* s_int_node *stack_a
+stack_a = &node */
 
 #endif
