@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:37:35 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/02 21:12:12 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/02 21:26:32 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int	ft_argv_parser(int argc, char **argv)
 		return (-1);
 	index = 0;
 	atoi_check = NULL;
+	argv++;
 	while (*argv != 0)
 	{
 		atoi_result = ft_atoi(*argv, atoi_check);
