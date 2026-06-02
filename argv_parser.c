@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:37:35 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/02 21:00:24 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/02 21:12:12 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,10 @@ t_stack_node *ft_node_new(int index, int atoi_result)
 		return (NULL);
 	new_node->index = index;
 	new_node->nbr = atoi_result;
+	return (new_node);
 }
 
-void	ft_stack_add(t_stack_node *stack_head, t_stack_node *new_node, int atoi_result)
+void	ft_stack_add(t_stack_node *stack_head, t_stack_node *new_node)
 {	
 	while (stack_head->next != NULL)
 		stack_head = stack_head->next;
@@ -59,17 +60,19 @@ int	ft_argv_parser(int argc, char **argv)
 	stack_head = ft_calloc(1, sizeof(t_stack_node));
 	if (!stack_head)
 		return (-1);
+	index = 0;
+	atoi_check = NULL;
 	while (*argv != 0)
 	{
 		atoi_result = ft_atoi(*argv, atoi_check);
 		if (*atoi_check == -1)
-			return(ft_stack_clear(stack_head), -1);
+			return(ft_stack_clear(&stack_head), -1);
 		else
 		{
 			new_node = ft_node_new(index, atoi_result);
 			if (!new_node)
-				return (ft_stack_clear(stack_head), -1);
-			ft_stack_creator(stack_head, new_node, atoi_result);			
+				return (ft_stack_clear(&stack_head), -1);
+			ft_stack_add(stack_head, new_node);			
 		}
 		argv++;
 		index++;
