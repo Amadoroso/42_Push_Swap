@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:37:35 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/02 19:14:12 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/02 19:21:01 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_error_checker(int argc, char **argv)
 		return (1);
 	while (*argv != 0)
 	{
-		atoi_result = ft_atoi(*argv, atoi_check);
+		atoi_result = ft_atoi(*argv);
 		if (*atoi_check)
 			ft_stack_a_creator();
 		argv++;
