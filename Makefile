@@ -6,7 +6,7 @@
 #    By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/01 21:01:11 by apinho-a          #+#    #+#              #
-#    Updated: 2026/06/01 21:23:52 by apinho-a         ###   ########.fr        #
+#    Updated: 2026/06/02 21:17:48 by apinho-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME =  push_swap
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 LIBFT_DIR = libft/
 
@@ -22,7 +22,7 @@ LIBFT_NAME = libft.a
 
 LIBFT = $(LIBFT_DIR)$(LIBFT_NAME)
 
-FUNC = .c
+FUNC = push_swap.c argv_parser.c
 
 MACHINE_CODE = $(FUNC:.c=.o)
 
