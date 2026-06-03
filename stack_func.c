@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 10:30:05 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/03 10:34:27 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/03 16:09:42 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,14 @@ void	ft_stack_clear(t_stack_node **stack_head)
 }
 
 // adds a new node (stack_node) to the front of the list (stack)
-void	ft_stack_add(t_stack_node *stack_head, t_stack_node *new_node)
+void	ft_stack_add(t_stack_node **stack_head, t_stack_node *new_node)
 {
-	while (stack_head->next != NULL)
-		stack_head = stack_head->next;
-	stack_head->next = new_node;
+	t_stack_node	*traveller;
+
+	traveller = *stack_head;
+	while (traveller->next != NULL)
+		traveller = traveller->next;
+	traveller->next = new_node;
 }
 
 // Callocs new node memory
