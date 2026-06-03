@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:32:52 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/03 16:31:11 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/03 16:44:33 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	if (!stack_head)
 		return (ft_putstr_fd("Error\n", 2), 1);
 	
-/* 	int count;
+	int count;
 	count = 0;
 	while (stack_head)
 	{
@@ -30,5 +30,5 @@ int	main(int argc, char **argv)
 		stack_head = stack_head->next;
 		count++;		
 	}
-	return (0); */
+	return (0);
 }

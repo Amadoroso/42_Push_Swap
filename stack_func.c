@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 10:30:05 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/03 16:09:42 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/03 16:59:08 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ void	ft_stack_clear(t_stack_node **stack_head)
 		free(*stack_head);
 		*stack_head = next;
 	}
-	free (stack_head);
-	stack_head = NULL;
 }
 
 // adds a new node (stack_node) to the front of the list (stack)

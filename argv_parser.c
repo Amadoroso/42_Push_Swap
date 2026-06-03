@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:37:35 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/03 16:20:14 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/03 16:43:39 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,7 @@ t_stack_node	*ft_argv_parser(int argc, char **argv)
 	
 	if (argc <= 1)
 		return (NULL);
-	stack_head = ft_calloc(1, sizeof(t_stack_node));
-	if (!stack_head)
-		return (NULL);
+	stack_head = NULL;
 	argv++;
 	if (ft_stack_creator(argv, &stack_head) == -1)
 		return (NULL);
