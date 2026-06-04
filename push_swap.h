@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
 /*   Updated: 2026/06/04 16:46:00 by apinho-a         ###   ########.fr       */
@@ -24,12 +24,18 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }				t_stack_node;
 
-// Holds the size and top points to top node (index 0)
-typedef struct	s_stack
+typedef struct s_stack
 {
-	t_stack_node	*top;
-	int				size;
-}				t_stack;
+	t_stack_node	*top; 
+	// it points to the node that is currently at the top of the stack but acording to the pdf, the first element is the top of the stack
+	int			size; // variable to count how many nodes has the stack
+}   t_stack;
+
+typedef struct s_stacks // struct that stores the value of stack a and b
+{
+	t_stack a;
+	t_stack b;
+}	t_stacks;
 
 // Managing stack nodes functions
 void			ft_stack_clear(t_stack_node **stack_head);
