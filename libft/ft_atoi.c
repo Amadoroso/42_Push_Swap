@@ -6,19 +6,19 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 16:44:37 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/05/08 15:23:16 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/02 19:46:41 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(char *nptr, int *atoi_check)
 {
-	int	result;
-	int	neg;
+	long	result;
+	int		neg;
 
 	result = 0;
-	neg = 0;
+	neg = 1;
 	while (*nptr == ' ' || (*nptr >= '\t' && *nptr <= '\r'))
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
@@ -27,14 +27,18 @@ int	ft_atoi(const char *nptr)
 			neg = -1;
 		nptr++;
 	}
-	while (*nptr != 0 && (*nptr >= 48 && *nptr <= 57))
+	if (!ft_isdigit(*nptr))
+		return (*atoi_check = -1, (int) result);
+	while (ft_isdigit(*nptr))
 	{
 		result = result * 10 + (*nptr - '0');
 		nptr++;
+		if ((result * neg) > 2147483647 || (result * neg) < -2147483648)
+			return (*atoi_check = -1, (int) result);
 	}
-	if (neg == -1)
-		return (result * -1);
-	return (result);
+	if (*nptr != 0)
+		return (*atoi_check = -1, (int) result);
+	return (*atoi_check = 1, (int)(result * neg));
 }
 
 /*

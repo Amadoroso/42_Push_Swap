@@ -6,7 +6,7 @@
 #    By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/06 15:13:50 by apinho-a          #+#    #+#              #
-#    Updated: 2026/05/09 20:35:24 by apinho-a         ###   ########.fr        #
+#    Updated: 2026/06/02 21:24:19 by apinho-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ FUNC_FILES = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isasc
 			ft_substr.c ft_tolower.c ft_toupper.c
 FUNC_MACHINE_CODE = $(FUNC_FILES:.c=.o) # = to FUNC_FILES but with .o
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 all : $(NAME) # first rule = default one
 

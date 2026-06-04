@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/04 16:43:38 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/04 16:46:00 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 // struct that holds the int, aswell as other info
 typedef struct s_stack_node
 {
-	int		index;
-	int		value;
+	int					index;
+	int					nbr;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
-}			t_stack_node;
+}				t_stack_node;
 
 typedef struct s_stack
 {
@@ -37,5 +37,14 @@ typedef struct s_stacks // struct that stores the value of stack a and b
 	t_stack b;
 }	t_stacks;
 
+// Managing stack nodes functions
+void			ft_stack_clear(t_stack_node **stack_head);
+t_stack_node	*ft_node_new(int index, int atoi_result);
+void			ft_stack_add(t_stack_node **stack_head, t_stack_node *new_node);
+
+// Parsing argv functions
+int				ft_repetition_check(int atoi_result, t_stack_node **stack_head);
+int				ft_stack_creator(char **argv, t_stack_node	**stack_head);
+t_stack_node	*ft_argv_parser(int argc, char **argv);
 
 #endif
