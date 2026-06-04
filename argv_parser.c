@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:37:35 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/04 18:29:11 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/04 18:39:03 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ t_stack	**ft_stack_creator(char **argv, t_stack **stack_head)
 		}
 		i++;
 	}
+	(*stack_head)->size = i;
 	return (stack_head);
 }
 

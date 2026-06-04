@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:32:52 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/04 18:37:50 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/04 18:40:38 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	main(int argc, char **argv)
 		printf("\n");
 		traveller = traveller->next;
 		count++;		
-	} */
+	}
+	printf("t_stack size: %i\n", stack_head->size); */
 	return (0);
 }
