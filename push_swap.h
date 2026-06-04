@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/02 19:55:08 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/04 13:27:18 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,16 @@ typedef struct s_int_node
 
 typedef struct s_stack
 {
-	t_int_node	*top; // it points to the node that is currently at the top of the stack
+	t_int_node	*top; 
+	// it points to the node that is currently at the top of the stack but acording to the pdf, the first element is the top of the stack
 	int			size; // variable to count how many nodes has the stack
 }   t_stack;
 
-typedef struct s_data // struct that points to stack a and b
+typedef struct s_stacks // struct that stores the value of stack a and b
 {
-	s_stack *a;
-	s_stack *b;
+	t_stack a;
+	t_stack b;
+}	t_stacks;
 
-}	t_data ;
-/* s_int_node *stack_a
-stack_a = &node */
 
 #endif
