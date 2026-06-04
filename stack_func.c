@@ -6,36 +6,45 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 10:30:05 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/03 18:05:59 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/04 18:54:04 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // Frees memory for a given list (stack) of nodes (stack_node)
-void	ft_stack_clear(t_stack_node **stack_head)
+void	ft_stack_clear(t_stack **stack_head)
 {
 	t_stack_node	*next;
+	t_stack_node	*traveller;
 
 	if (!stack_head || !*stack_head)
 		return ;
-	while (*stack_head != NULL)
+	traveller = (*stack_head)->top;
+	while (traveller)
 	{
-		next = (*stack_head)->next;
-		free(*stack_head);
-		*stack_head = next;
+		next = traveller->next;
+		free(traveller);
+		traveller = next;
 	}
+	free(*stack_head);
 }
 
-// adds a new node (stack_node) to the front of the list (stack)
-void	ft_stack_add(t_stack_node **stack_head, t_stack_node *new_node)
+// adds a new node (stack_node) to the right of the list (stack)
+void	ft_stack_add(t_stack **stack_head, t_stack_node *new_node)
 {
 	t_stack_node	*traveller;
 
-	traveller = *stack_head;
+	if (!(*stack_head)->top)
+	{
+		(*stack_head)->top = new_node;
+		return ;
+	}
+	traveller = (*stack_head)->top;	
 	while (traveller->next != NULL)
 		traveller = traveller->next;
 	traveller->next = new_node;
+	new_node->prev = traveller;
 }
 
 // Callocs new node memory
