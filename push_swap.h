@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/04 16:57:53 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/04 18:06:33 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_stack_node
 
 typedef struct s_stack
 {
-	t_stack_node	*top; 
+	t_stack_node	*top;
 	// it points to the node that is currently at the top of the stack but acording to the pdf, the first element is the top of the stack
 	int				size; // variable to count how many nodes has the stack
 }					t_stack;
@@ -44,7 +44,7 @@ void			ft_stack_add(t_stack_node **stack_head, t_stack_node *new_node);
 
 // Parsing argv functions
 int				ft_repetition_check(int atoi_result, t_stack_node **stack_head);
-int				ft_stack_creator(char **argv, t_stack_node	**stack_head);
+t_stack_node	**ft_stack_creator(char **argv, t_stack_node **stack_head);
 t_stack_node	*ft_argv_parser(int argc, char **argv);
 
 #endif
