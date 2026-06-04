@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/03 17:48:29 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/04 16:46:00 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,15 @@ typedef struct s_stack_node
 	int					index;
 	int					nbr;
 	struct s_stack_node	*next;
+	struct s_stack_node	*prev;
 }				t_stack_node;
+
+// Holds the size and top points to top node (index 0)
+typedef struct	s_stack
+{
+	t_stack_node	*top;
+	int				size;
+}				t_stack;
 
 // Managing stack nodes functions
 void			ft_stack_clear(t_stack_node **stack_head);
