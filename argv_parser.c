@@ -6,21 +6,21 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:37:35 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/04 18:06:36 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/04 18:29:11 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // Checks for repetitions
-int	ft_repetition_check(int atoi_result, t_stack_node **stack_head)
+int	ft_repetition_check(int atoi_result, t_stack **stack_head)
 {
 	int				rep;
 	t_stack_node	*traveller;
 
 	if (!stack_head)
 		return (1);
-	traveller = *stack_head;
+	traveller = (*stack_head)->top;
 	rep = 0;
 	while (traveller)
 	{
@@ -32,7 +32,7 @@ int	ft_repetition_check(int atoi_result, t_stack_node **stack_head)
 }
 
 // Creates the stack from the arguments. If error -> Frees(all) + returns(-1)
-t_stack_node	**ft_stack_creator(char **argv, t_stack_node **stack_head)
+t_stack	**ft_stack_creator(char **argv, t_stack **stack_head)
 {
 	int				atoi_check;
 	int				atoi_result;
@@ -58,13 +58,13 @@ t_stack_node	**ft_stack_creator(char **argv, t_stack_node **stack_head)
 }
 
 // Parsing through argv arguments
-t_stack_node	*ft_argv_parser(int argc, char **argv)
+t_stack	*ft_argv_parser(int argc, char **argv)
 {
-	t_stack_node	*stack_head;
-	
+	t_stack	*stack_head;
+
 	if (argc <= 1)
-		return (NULL);
-	stack_head = NULL;
+	return (NULL);
+	stack_head = ft_calloc(1, sizeof(t_stack));
 	argv++;
 	if (!ft_stack_creator(argv, &stack_head))
 		return (NULL);

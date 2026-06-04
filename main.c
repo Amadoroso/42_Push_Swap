@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:32:52 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/04 18:06:16 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/04 18:37:50 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,22 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack_node	*stack_head;
+	t_stack	*stack_head;
 	
 	stack_head = ft_argv_parser(argc, argv);
 	if (!stack_head)
 		return (ft_putstr_fd("Error\n", 2), 1);
 	
-/* 	int count;
+/* 	t_stack_node	*traveller;
+	int count;
 	count = 0;
-	while (stack_head)
+	traveller = stack_head->top;
+	while (traveller)
 	{
-		printf("node %i index> %i\n", count, stack_head->index);
-		printf("node %i int> %i\n", count, stack_head->nbr);
+		printf("node %i index> %i\n", count, traveller->index);
+		printf("node %i int> %i\n", count, traveller->nbr);
 		printf("\n");
-		stack_head = stack_head->next;
+		traveller = traveller->next;
 		count++;		
 	} */
 	return (0);
