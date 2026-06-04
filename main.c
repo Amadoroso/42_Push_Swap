@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:32:52 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/04 18:40:38 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/04 18:42:35 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(int argc, char **argv)
 	stack_head = ft_argv_parser(argc, argv);
 	if (!stack_head)
 		return (ft_putstr_fd("Error\n", 2), 1);
+	ft_stack_clear(&stack_head);
 	
 /* 	t_stack_node	*traveller;
 	int count;

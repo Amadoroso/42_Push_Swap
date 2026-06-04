@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 10:30:05 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/04 18:35:22 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/04 18:54:04 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_stack_clear(t_stack **stack_head)
 	if (!stack_head || !*stack_head)
 		return ;
 	traveller = (*stack_head)->top;
-	while (traveller->next)
+	while (traveller)
 	{
 		next = traveller->next;
 		free(traveller);
