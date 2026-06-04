@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:37:35 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/03 18:05:52 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/04 17:11:47 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,7 @@ int	ft_stack_creator(char **argv, t_stack_node **stack_head)
 			new_node = ft_node_new(i, atoi_result);
 			if (!new_node)
 				return (ft_stack_clear(stack_head), -1);
-			if (i == 0)
-				*stack_head = new_node;
-			else
-				ft_stack_add(stack_head, new_node);	
+			ft_stack_add(stack_head, new_node);	
 		}
 		i++;
 	}
