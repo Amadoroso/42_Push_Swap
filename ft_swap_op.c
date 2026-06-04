@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:45:51 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/04 15:39:39 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/04 16:46:52 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ ss : sa and sb at the same time. */
 
 #include "push_swap.h"
 
-void	ft_swap(t_stack *values)
+static void	ft_swap(t_stack *values)
 {
-	t_int_node	*first;
-	t_int_node	*second;
+	t_stack_node	*first;
+	t_stack_node	*second;
 	
 	if (values->size < 2)
 		return ;
