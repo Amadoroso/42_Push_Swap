@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:32:52 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/04 18:42:35 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/04 19:07:19 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,4 @@ int	main(int argc, char **argv)
 	printf("t_stack size: %i\n", stack_head->size); */
 	return (0);
 }
+// Still cant deal with "1 2 3" correctly. Feature to be implemented
