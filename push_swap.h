@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/05 18:38:21 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/05 18:55:27 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ t_stack			*ft_argv_parser(int argc, char **argv);
 // Parsing argv utils functions
 int				ft_repetition_check(int atoi_result, t_stack **stack_head);
 char			**ft_sanitize_and_split(char **arg);
+void			ft_split_free(char **matrix);
 int				ft_sanitize_wspaces(char **arg);
 int				ft_iswspace(int	c);
 
