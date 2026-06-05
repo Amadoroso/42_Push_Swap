@@ -6,70 +6,59 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:37:35 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/04 18:41:53 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/05 20:25:50 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Checks for repetitions
-int	ft_repetition_check(int atoi_result, t_stack **stack_head)
+// Processes the current argument being parsed in argv_parser
+t_stack	**ft_arg_processing(char *arg, t_stack **stack_head, int *size)
 {
-	int				rep;
-	t_stack_node	*traveller;
+	char	**split_args;
+	int		i;
 
-	if (!stack_head)
-		return (1);
-	traveller = (*stack_head)->top;
-	rep = 0;
-	while (traveller)
+	split_args = ft_sanitize_and_split(arg);
+	if (!split_args)
 	{
-		if(atoi_result == traveller->nbr)
-			rep++;
-		traveller = traveller->next;
+		if (!ft_stack_creator(arg, stack_head, *size))
+			return (NULL);
+		(*size)++;
 	}
-	return (rep);
-}
-
-// Creates the stack from the arguments. If error -> Frees(all) + returns(-1)
-t_stack	**ft_stack_creator(char **argv, t_stack **stack_head)
-{
-	int				atoi_check;
-	int				atoi_result;
-	int				i;
-	t_stack_node	*new_node;
-	
-	i = 0;
-	while (*(argv + i) != 0)
+	else
 	{
-		atoi_result = ft_atoi(*(argv + i), &atoi_check);
-		if (atoi_check == -1 || ft_repetition_check(atoi_result, stack_head) > 0)
-			return(ft_stack_clear(stack_head), NULL);
-		else
+		i = 0;
+		while (*(split_args + i))
 		{
-			new_node = ft_node_new(i, atoi_result);
-			if (!new_node)
-				return (ft_stack_clear(stack_head), NULL);
-			ft_stack_add(stack_head, new_node);	
+			if (!ft_stack_creator(*(split_args + i), stack_head, *size))
+				return (ft_split_free(split_args), NULL);
+			i++;
+			(*size)++;
 		}
-		i++;
+		ft_split_free(split_args);
 	}
-	(*stack_head)->size = i;
 	return (stack_head);
 }
 
-// Parsing through argv arguments
+// Parsing through argv
 t_stack	*ft_argv_parser(int argc, char **argv)
 {
-	t_stack	*stack_head;
+	t_stack			*stack_head;
+	int				size;
 
 	if (argc <= 1)
-	return (NULL);
-	stack_head = ft_calloc(1, sizeof(t_stack));
-	argv++;
-	if (!ft_stack_creator(argv, &stack_head))
 		return (NULL);
+	stack_head = ft_calloc(1, sizeof(t_stack));
+	if (!stack_head)
+		return (NULL);
+	argv++;
+	size = 0;
+	while (*argv != 0)
+	{
+		if (!ft_arg_processing(*argv, &stack_head, &size))
+			return (NULL);
+		argv++;
+	}
+	stack_head->size = size;
 	return (stack_head);
 }
-
-

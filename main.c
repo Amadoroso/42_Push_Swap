@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:32:52 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/04 19:07:19 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/05 20:32:37 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,22 @@ int	main(int argc, char **argv)
 	stack_head = ft_argv_parser(argc, argv);
 	if (!stack_head)
 		return (ft_putstr_fd("Error\n", 2), 1);
-	ft_stack_clear(&stack_head);
-	
+
 /* 	t_stack_node	*traveller;
 	int count;
 	count = 0;
 	traveller = stack_head->top;
 	while (traveller)
-	{
-		printf("node %i index> %i\n", count, traveller->index);
-		printf("node %i int> %i\n", count, traveller->nbr);
-		printf("\n");
-		traveller = traveller->next;
-		count++;		
-	}
-	printf("t_stack size: %i\n", stack_head->size); */
+		{
+			printf("node %i index> %i\n", count, traveller->index);
+			printf("node %i int> %i\n", count, traveller->nbr);
+			printf("\n");
+			traveller = traveller->next;
+			count++;		
+		}
+	printf("t_stack size: %i\n", stack_head->size);
+	printf("t_stack top: %p\n", stack_head->top);
+	printf("t_stack top index (0 is correct): %d\n", stack_head->top->index); */
+	ft_stack_clear(&stack_head);
 	return (0);
 }
-// Still cant deal with "1 2 3" correctly. Feature to be implemented

@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/04 18:25:38 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/05 20:27:15 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,25 @@ typedef struct s_stack
 
 typedef struct s_stacks // struct that stores the value of stack a and b
 {
-	t_stack a;
-	t_stack b;
+	t_stack	a;
+	t_stack	b;
 }	t_stacks;
 
 // Managing stack nodes functions
 void			ft_stack_clear(t_stack **stack_head);
 t_stack_node	*ft_node_new(int index, int atoi_result);
 void			ft_stack_add(t_stack **stack_head, t_stack_node *new_node);
+t_stack			**ft_stack_creator(char *arg, t_stack **stack_head, int index);
 
-// Parsing argv functions
-int	ft_repetition_check(int atoi_result, t_stack **stack_head);
-t_stack	**ft_stack_creator(char **argv, t_stack **stack_head);
-t_stack	*ft_argv_parser(int argc, char **argv);
+// Parsing argv parsing
+t_stack			*ft_argv_parser(int argc, char **argv);
+t_stack			**ft_arg_processing(char *arg, t_stack **stack_head, int *size);
+
+// Parsing argv utils functions
+int				ft_repetition_check(int atoi_result, t_stack **stack_head);
+char			**ft_sanitize_and_split(char *arg);
+void			ft_split_free(char **matrix);
+int				ft_sanitize_wspaces(char *arg);
+int				ft_iswspace(int c);
 
 #endif
