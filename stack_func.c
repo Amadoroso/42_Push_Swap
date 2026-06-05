@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 10:30:05 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/05 18:55:30 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/05 20:26:31 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_stack_add(t_stack **stack_head, t_stack_node *new_node)
 		(*stack_head)->top = new_node;
 		return ;
 	}
-	traveller = (*stack_head)->top;	
+	traveller = (*stack_head)->top;
 	while (traveller->next != NULL)
 		traveller = traveller->next;
 	traveller->next = new_node;
@@ -66,16 +66,16 @@ t_stack	**ft_stack_creator(char *arg, t_stack **stack_head, int index)
 	int				atoi_check;
 	int				atoi_result;
 	t_stack_node	*new_node;
-	
+
 	atoi_result = ft_atoi(arg, &atoi_check);
 	if (atoi_check == -1 || ft_repetition_check(atoi_result, stack_head) > 0)
-		return(ft_stack_clear(stack_head), NULL);
+		return (ft_stack_clear(stack_head), NULL);
 	else
 	{
 		new_node = ft_node_new(index, atoi_result);
 		if (!new_node)
 			return (ft_stack_clear(stack_head), NULL);
-		ft_stack_add(stack_head, new_node);	
+		ft_stack_add(stack_head, new_node);
 	}
 	return (stack_head);
 }

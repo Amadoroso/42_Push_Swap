@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/05 18:55:27 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/05 20:27:15 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ typedef struct s_stack
 
 typedef struct s_stacks // struct that stores the value of stack a and b
 {
-	t_stack a;
-	t_stack b;
+	t_stack	a;
+	t_stack	b;
 }	t_stacks;
 
 // Managing stack nodes functions
@@ -45,12 +45,13 @@ t_stack			**ft_stack_creator(char *arg, t_stack **stack_head, int index);
 
 // Parsing argv parsing
 t_stack			*ft_argv_parser(int argc, char **argv);
+t_stack			**ft_arg_processing(char *arg, t_stack **stack_head, int *size);
 
 // Parsing argv utils functions
 int				ft_repetition_check(int atoi_result, t_stack **stack_head);
-char			**ft_sanitize_and_split(char **arg);
+char			**ft_sanitize_and_split(char *arg);
 void			ft_split_free(char **matrix);
-int				ft_sanitize_wspaces(char **arg);
-int				ft_iswspace(int	c);
+int				ft_sanitize_wspaces(char *arg);
+int				ft_iswspace(int c);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 18:29:43 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/05 18:38:53 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/05 20:29:01 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_repetition_check(int atoi_result, t_stack **stack_head)
 	rep = 0;
 	while (traveller)
 	{
-		if(atoi_result == traveller->nbr)
+		if (atoi_result == traveller->nbr)
 			rep++;
 		traveller = traveller->next;
 	}
@@ -32,26 +32,26 @@ int	ft_repetition_check(int atoi_result, t_stack **stack_head)
 }
 
 // Checks if the passed value is whitespace
-int	ft_iswspace(int	c)
+int	ft_iswspace(int c)
 {
-	if(c == ' ' || (c >= '\t' && c <= '\r'))
+	if (c == ' ' || (c >= '\t' && c <= '\r'))
 		return (1);
 	return (0);
 }
 
 // Detects and converts all wspaces to ' ' (32)
-int	ft_sanitize_wspaces(char **arg)
+int	ft_sanitize_wspaces(char *arg)
 {
 	int	j;
 	int	wspace_count;
-	
+
 	j = 0;
 	wspace_count = 0;
-	while (*(*arg + j))
+	while (*(arg + j))
 	{
-		if (ft_iswspace(*(*arg + j)))
+		if (ft_iswspace(*(arg + j)))
 		{
-			*(*arg + j) = ' ';
+			*(arg + j) = ' ';
 			wspace_count++;
 		}
 		j++;
@@ -60,14 +60,29 @@ int	ft_sanitize_wspaces(char **arg)
 }
 
 // If there are any white space chars, it splits the arg into several strings
-char	**ft_sanitize_and_split(char **arg)
+char	**ft_sanitize_and_split(char *arg)
 {
 	char	**new_args;
+
 	if (ft_sanitize_wspaces(arg))
 	{
-		new_args = ft_split(*arg, ' ');
+		new_args = ft_split((const char *) arg, ' ');
 		return (new_args);
 	}
 	else
 		return (NULL);
+}
+
+// Frees the the full matrix that comes from ft_split
+void	ft_split_free(char **matrix)
+{
+	int	i;
+
+	i = 0;
+	while (*(matrix + i))
+	{
+		free(*(matrix + i));
+		i++;
+	}
+	free(matrix);
 }
