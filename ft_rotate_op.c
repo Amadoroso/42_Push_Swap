@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 17:05:13 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/05 17:40:09 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/06 14:14:01 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,16 @@ void ft_rotate(t_stack *stack)
 
 void ft_rotate_a(t_stack *stack)
 {
-	ft_rotate_a(stack);
+	ft_rotate(stack);
 }
 
 void ft_rotate_a(t_stack *stack)
 {
-	ft_rotate_a(stack);
+	ft_rotate(stack);
 }
 
 void ft_rotate_both (t_stacks *stacks)
 {
-	ft_rotate_a(&stacks->a);
-	ft_rotate_b(&stacks->b);	
+	ft_rotate(&stacks->a);
+	ft_rotate(&stacks->b);	
 }
