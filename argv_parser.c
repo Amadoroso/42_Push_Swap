@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:37:35 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/05 20:25:50 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/06 17:17:39 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ t_stack	*ft_argv_parser(int argc, char **argv)
 {
 	t_stack			*stack_head;
 	int				size;
+	int				flags;
 
 	if (argc <= 1)
 		return (NULL);
@@ -52,6 +53,9 @@ t_stack	*ft_argv_parser(int argc, char **argv)
 	if (!stack_head)
 		return (NULL);
 	argv++;
+	flags = ft_flag_parser(&stack_head, argv);
+	while (flags--)
+		argv++;
 	size = 0;
 	while (*argv != 0)
 	{
