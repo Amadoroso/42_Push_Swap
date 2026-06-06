@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:32:52 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/05 20:32:37 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/06 17:19:39 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ int	main(int argc, char **argv)
 		}
 	printf("t_stack size: %i\n", stack_head->size);
 	printf("t_stack top: %p\n", stack_head->top);
-	printf("t_stack top index (0 is correct): %d\n", stack_head->top->index); */
-	ft_stack_clear(&stack_head);
+	printf("t_stack top index (0 is correct): %d\n", stack_head->top->index);
+	printf("t_stack bench?: %i\n", stack_head->bench);
+	printf("t_stack flag: %s\n", stack_head->flag);
+	ft_stack_clear(&stack_head); */
 	return (0);
 }

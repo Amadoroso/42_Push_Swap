@@ -6,7 +6,7 @@
 #    By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/01 21:01:11 by apinho-a          #+#    #+#              #
-#    Updated: 2026/06/05 18:39:33 by apinho-a         ###   ########.fr        #
+#    Updated: 2026/06/06 17:18:16 by apinho-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ LIBFT_NAME = libft.a
 
 LIBFT = $(LIBFT_DIR)$(LIBFT_NAME)
 
-FUNC = main.c argv_parser.c argv_parser_utils.c stack_func.c
+FUNC = main.c argv_parser.c argv_parser_utils.c stack_func.c flag_parser.c
 
 MACHINE_CODE = $(FUNC:.c=.o)
 
