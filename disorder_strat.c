@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:45:56 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/08 11:07:33 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/08 11:31:11 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ float	ft_disorder(t_stack *stack_head)
 // Determines the strategy to use depending on the disorder
 char	*ft_disorder_strat(float disorder, t_stack **stack_head)
 {
-	if (disorder == 0 || (!stack_head || !*stack_head
-			|| !(*stack_head)->top || !(*stack_head)->top->next))
+	if (disorder == 0 || !stack_head || !*stack_head
+			|| !(*stack_head)->top || !(*stack_head)->top->next)
 		return (NULL);
 	if ((*stack_head)->flag && (*stack_head)->flag != "--adaptive")
 		return (NULL);
