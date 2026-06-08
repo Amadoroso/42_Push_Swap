@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/06 17:18:40 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/08 10:34:58 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void			ft_stack_add(t_stack **stack_head, t_stack_node *new_node);
 t_stack			**ft_stack_creator(char *arg, t_stack **stack_head, int index);
 
 // Parsing argv parsing
-t_stack			*ft_argv_parser(int argc, char **argv);
+t_stack			*ft_argv_parser(char **argv);
 t_stack			**ft_arg_processing(char *arg, t_stack **stack_head, int *size);
 
 // Flag parsing
@@ -59,5 +59,8 @@ char			**ft_sanitize_and_split(char *arg);
 void			ft_split_free(char **matrix);
 int				ft_sanitize_wspaces(char *arg);
 int				ft_iswspace(int c);
+
+// Disorder calculator
+float	ft_disorder(t_stack *stack_head);
 
 #endif
