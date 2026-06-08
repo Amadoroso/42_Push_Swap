@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/08 10:34:58 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/08 11:00:04 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,9 @@ void			ft_split_free(char **matrix);
 int				ft_sanitize_wspaces(char *arg);
 int				ft_iswspace(int c);
 
-// Disorder calculator
+// Disorder calculator and strategy selector
 float	ft_disorder(t_stack *stack_head);
+void	ft_disorder_strat(float disorder, t_stack **stack_head);
+
 
 #endif

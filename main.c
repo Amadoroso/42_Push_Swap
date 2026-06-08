@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:32:52 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/08 10:52:02 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/08 10:57:17 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_head;
-	float	disorder;
 
 	if (argc <= 1)
 		return (0);
 	stack_head = ft_argv_parser(argv);
 	if (!stack_head)
 		return (ft_putstr_fd("Error\n", 2), 1);
-	disorder = ft_disorder(stack_head);
+	ft_disorder_strat(ft_disorder(stack_head), &stack_head);
 
 /* 	t_stack_node	*traveller;
 	int count;
