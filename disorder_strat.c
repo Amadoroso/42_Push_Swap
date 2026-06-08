@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:45:56 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/08 11:31:11 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/08 12:21:15 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,13 @@ char	*ft_disorder_strat(float disorder, t_stack **stack_head)
 	if (disorder == 0 || !stack_head || !*stack_head
 			|| !(*stack_head)->top || !(*stack_head)->top->next)
 		return (NULL);
-	if ((*stack_head)->flag && (*stack_head)->flag != "--adaptive")
+	if ((*stack_head)->flag && ft_strcmp((*stack_head)->flag,"--adaptive"))
 		return (NULL);
 	if (disorder < 0.2)
-		return ((*stack_head)->flag = "--simple");
+		return ((*stack_head)->flag = "--simple / O(n2)");
 	if (disorder >= 0.2 && disorder < 0.5)
-		return ((*stack_head)->flag = "--medium");
+		return ((*stack_head)->flag = "--medium / O(n√n)");
 	if (disorder >= 0.5)
-		return ((*stack_head)->flag = "--complex");
+		return ((*stack_head)->flag = "--complex / O(nlogn)");
+	return (NULL);
 }

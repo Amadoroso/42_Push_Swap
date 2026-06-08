@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 17:17:01 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/06 17:17:28 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/08 12:02:56 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 char	*ft_flag_detector(char *arg)
 {
 	if (!ft_strcmp(arg, "--simple"))
-		return ("--simple");
+		return ("--simple / O(n2)");
 	if (!ft_strcmp(arg, "--medium"))
-		return ("--medium");
+		return ("--medium / O(n√n)");
 	if (!ft_strcmp(arg, "--complex"))
-		return ("--complex");
+		return ("--complex / O(nlogn)");
 	if (!ft_strcmp(arg, "--adaptive"))
 		return ("--adaptive");
 	return (NULL);
@@ -40,7 +40,7 @@ int	ft_flag_parser(t_stack **stack_head, char **argv)
 	{
 		if (ft_flag_detector(argv[i]) && flag == 0)
 		{
-			(*stack_head)->flag = argv[i] + 2;
+			(*stack_head)->flag = ft_flag_detector(argv[i]) + 2;
 			flag++;
 		}
 		if (!ft_strcmp(argv[i], "--bench") && bench == 0)

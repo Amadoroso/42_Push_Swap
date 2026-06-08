@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/08 11:00:04 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/08 12:07:53 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
+# include "ft_printf/ft_printf.h"
 
 // struct that holds the int, aswell as other info
 typedef struct s_stack_node
@@ -61,8 +62,11 @@ int				ft_sanitize_wspaces(char *arg);
 int				ft_iswspace(int c);
 
 // Disorder calculator and strategy selector
-float	ft_disorder(t_stack *stack_head);
-void	ft_disorder_strat(float disorder, t_stack **stack_head);
+float			ft_disorder(t_stack *stack_head);
+char			*ft_disorder_strat(float disorder, t_stack **stack_head);
+
+// Output printing
+void			ft_output_printer(float disorder, t_stack **stack_head);
 
 
 #endif

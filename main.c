@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:32:52 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/08 11:33:58 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/08 12:03:57 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	
 	ft_output_printer(disorder, &stack_head);
 
-/* 	t_stack_node	*traveller;
+	t_stack_node	*traveller;
 	int count;
 	count = 0;
 	traveller = stack_head->top;
@@ -45,6 +45,6 @@ int	main(int argc, char **argv)
 	printf("t_stack bench?: %i\n", stack_head->bench);
 	printf("t_stack flag: %s\n", stack_head->flag);
 	printf("calculated disorder: %f\n", disorder);
-	ft_stack_clear(&stack_head); */
+	ft_stack_clear(&stack_head);
 	return (0);
 }
