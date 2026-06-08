@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:32:52 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/06 17:19:39 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/08 16:08:17 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,19 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_head;
-	
-	stack_head = ft_argv_parser(argc, argv);
+	t_info	*info;
+
+	if (argc <= 1)
+		return (0);
+	stack_head = ft_argv_parser(argv);
 	if (!stack_head)
 		return (ft_putstr_fd("Error\n", 2), 1);
+	info = ft_disorder(&stack_head);
+	if (!info)
+		return (ft_putstr_fd("Error\n", 2), 1);
+	// function that uses the disorder to know which algorithm to use!
+	if (stack_head->bench)
+		ft_bench_printer(&info, &stack_head);
 
 /* 	t_stack_node	*traveller;
 	int count;
@@ -37,6 +46,8 @@ int	main(int argc, char **argv)
 	printf("t_stack top index (0 is correct): %d\n", stack_head->top->index);
 	printf("t_stack bench?: %i\n", stack_head->bench);
 	printf("t_stack flag: %s\n", stack_head->flag);
-	ft_stack_clear(&stack_head); */
+	printf("calculated disorder: %f\n", info->disorder); */
+	free(info);
+	ft_stack_clear(&stack_head);
 	return (0);
 }

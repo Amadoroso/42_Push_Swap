@@ -5,59 +5,38 @@
 #                                                     +:+ +:+         +:+      #
 #    By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/06/01 21:01:11 by apinho-a          #+#    #+#              #
-#    Updated: 2026/06/08 12:19:01 by apinho-a         ###   ########.fr        #
+#    Created: 2026/05/11 17:11:14 by apinho-a          #+#    #+#              #
+#    Updated: 2026/06/08 12:17:22 by apinho-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  push_swap
+NAME =  libftprintf.a
 
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -g
 
-LIBFT_DIR = libft/
-
-LIBFT_NAME = libft.a
-
-LIBFT = $(LIBFT_DIR)$(LIBFT_NAME)
-
-PRINTF_DIR = ft_printf/
-
-PRINTF_NAME = libftprintf.a
-
-PRINTF = $(PRINTF_DIR)$(PRINTF_NAME)
-
-FUNC = main.c argv_parser.c argv_parser_utils.c stack_func.c flag_parser.c disorder_strat.c output_printing.c
+FUNC = ft_printf.c ft_printf_aux.c ft_printf_aux2.c
 
 MACHINE_CODE = $(FUNC:.c=.o)
 
 all : $(NAME) # first rule = default one
 
-$(LIBFT) :
-	make -C $(LIBFT_DIR)
-
-$(PRINTF) :
-	make -C $(PRINTF_DIR)
-
-$(NAME) : $(MACHINE_CODE) $(LIBFT) $(PRINTF)
-	$(CC) $(CFLAGS) $(MACHINE_CODE) $(LIBFT) $(PRINTF) -o $(NAME)
-
-%.o : %.c push_swap.h
+# % is a pattern for individual file matching. * expands to the full list at once.
+%.o : %.c ft_printf.h
 	$(CC) $(CFLAGS) -c $< -o $@
 # creates the machine code .o ^
 # $< = to depedency and $@ = to target
+$(NAME) : $(MACHINE_CODE)
+	ar rcs $(NAME) $(MACHINE_CODE)
 
 clean:
 	rm -f $(MACHINE_CODE)
-	make -C $(LIBFT_DIR) clean
-	make -C $(PRINTF_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
-	make -C $(LIBFT_DIR) fclean
-	make -C $(PRINTF_DIR) clean
+	rm -fr a.out
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test
