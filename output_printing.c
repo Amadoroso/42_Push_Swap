@@ -6,19 +6,20 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 11:29:12 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/08 16:09:09 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/08 16:25:04 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Prints output with more detail (bench = 1). Triggered in each algorithm
-// Need if statment inside the algorithm
+// Triggered in each algorithm
+// Needs "if statment" inside each algorithm the algorithm
+// Its only valid for stack_head->bench = 0
 void	ft_normal_printer(char	*op)
 {
 	ft_printf("%s\n", op);
 }
-// Prints output with more detail (bench = 1)
+// Prints output with more detail (stack_head->bench = 1)
 void	ft_bench_printer(t_info **info, t_stack **stack_head)
 {
 	if (!stack_head || !*stack_head)
