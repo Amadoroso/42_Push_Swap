@@ -6,17 +6,17 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:45:56 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/08 16:23:52 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/08 16:29:48 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// adds the strategy complexity string to stack_head->flag (necessary for --bench)
+// adds the strategy complexity string to stack_head->flag (necessary for bench)
 char	*ft_disorder_strat(float disorder, t_stack **stack_head)
 {
 	if (disorder == 0 || !stack_head || !*stack_head
-			|| !(*stack_head)->top || !(*stack_head)->top->next)
+		|| !(*stack_head)->top || !(*stack_head)->top->next)
 		return (NULL);
 	if (!ft_strcmp((*stack_head)->flag, "Adaptive"))
 	{
@@ -25,7 +25,7 @@ char	*ft_disorder_strat(float disorder, t_stack **stack_head)
 		if (disorder >= 0.2 && disorder < 0.5)
 			return ((*stack_head)->flag = "Adaptive / O(n√n)");
 		if (disorder >= 0.5)
-			return ((*stack_head)->flag = "Adaptive / O(nlogn)");	
+			return ((*stack_head)->flag = "Adaptive / O(nlogn)");
 	}
 	return (NULL);
 }
@@ -65,13 +65,13 @@ t_info	*ft_disorder(t_stack **stack_head)
 {
 	t_info	*info;
 	float	disorder;
-	
+
 	disorder = ft_disorder_calc(stack_head);
 	info = ft_calloc(1, sizeof(t_info));
 	if (!info)
 		return (NULL);
 	info->disorder = disorder;
 	info->nbr = disorder * 100;
-	info->dec = (int) (disorder * 10000) % 100;
+	info->dec = (int)(disorder * 10000) % 100;
 	return (info);
 }

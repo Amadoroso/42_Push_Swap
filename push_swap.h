@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/08 16:08:44 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/08 16:26:07 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ float			ft_disorder_calc(t_stack **stack_head);
 char			*ft_disorder_strat(float disorder, t_stack **stack_head);
 
 // Output printing
-void	ft_bench_printer(t_info **info, t_stack **stack_head);
-void	ft_normal_printer(char	*op);
+void			ft_bench_printer(t_info **info, t_stack **stack_head);
+void			ft_normal_printer(char	*op);
 
 #endif
