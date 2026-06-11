@@ -6,7 +6,7 @@
 #    By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/01 21:01:11 by apinho-a          #+#    #+#              #
-#    Updated: 2026/06/11 18:16:14 by apinho-a         ###   ########.fr        #
+#    Updated: 2026/06/11 20:04:56 by apinho-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,6 @@ LIBFT_NAME = libft.a
 
 LIBFT = $(LIBFT_DIR)$(LIBFT_NAME)
 
-PRINTF_DIR = ft_printf/
-
-PRINTF_NAME = libftprintf.a
-
-PRINTF = $(PRINTF_DIR)$(PRINTF_NAME)
-
 FUNC = main.c argv_parser.c argv_parser_utils.c stack_func.c flag_parser.c disorder_strat.c output_printing.c
 
 MACHINE_CODE = $(FUNC:.c=.o)
@@ -40,8 +34,8 @@ $(LIBFT) :
 $(PRINTF) :
 	make -C $(PRINTF_DIR)
 
-$(NAME) : $(MACHINE_CODE) $(LIBFT) $(PRINTF)
-	$(CC) $(CFLAGS) $(MACHINE_CODE) $(LIBFT) $(PRINTF) -o $(NAME)
+$(NAME) : $(MACHINE_CODE) $(LIBFT)
+	$(CC) $(CFLAGS) $(MACHINE_CODE) $(LIBFT) -o $(NAME)
 
 %.o : %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -51,12 +45,10 @@ $(NAME) : $(MACHINE_CODE) $(LIBFT) $(PRINTF)
 clean:
 	rm -f $(MACHINE_CODE)
 	make -C $(LIBFT_DIR) clean
-	make -C $(PRINTF_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
 	make -C $(LIBFT_DIR) fclean
-	make -C $(PRINTF_DIR) fclean
 
 re: fclean all
 

@@ -6,11 +6,11 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 13:35:01 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/08 12:16:51 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/11 20:04:24 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_putchar1_fd(char c, int fd)
 {

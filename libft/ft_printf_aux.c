@@ -6,11 +6,11 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 19:51:42 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/08 12:20:00 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/11 20:04:27 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_putnbr1_fd(int n, int fd)
 {
