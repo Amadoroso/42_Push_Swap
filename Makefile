@@ -6,7 +6,7 @@
 #    By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/01 21:01:11 by apinho-a          #+#    #+#              #
-#    Updated: 2026/06/08 12:19:01 by apinho-a         ###   ########.fr        #
+#    Updated: 2026/06/11 18:13:13 by apinho-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,12 +51,12 @@ $(NAME) : $(MACHINE_CODE) $(LIBFT) $(PRINTF)
 clean:
 	rm -f $(MACHINE_CODE)
 	make -C $(LIBFT_DIR) clean
-	make -C $(PRINTF_DIR) clean
+	make -C $(PRINTF_DIR) fclean
 
 fclean: clean
 	rm -f $(NAME)
 	make -C $(LIBFT_DIR) fclean
-	make -C $(PRINTF_DIR) clean
+	make -C $(PRINTF_DIR) fclean
 
 re: fclean all
 
