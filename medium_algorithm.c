@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 15:54:13 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/15 18:31:52 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/15 18:41:34 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,10 @@ void	ft_medium_algorithm(t_stack	**stack_head, t_info **info)
 		}
 		chunk_end += chunk_size;
 	}
-	
+	while (stack_b->size)
+	{
+		if ()
+	}
 	ft_stack_clear(stack_b);
 }
 
