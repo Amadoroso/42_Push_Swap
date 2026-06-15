@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 17:05:13 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/08 16:10:51 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/13 18:40:36 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ The first element becomes the last one.
 rb (rotate b): Shift up all elements of stack b by one.
 The first element becomes the last one.
 rr : ra and rb at the same time. */
-void ft_rotate(t_stack *stack)
+void	ft_rotate(t_stack *stack)
 {
-	t_stack_node *top_node;
-	t_stack_node *last_node;
+	t_stack_node	*top_node;
+	t_stack_node	*last_node;
 	if (stack->top == NULL || stack == NULL)
 		return;
 	top_node = stack->top; // aqui esta igual ao endereco do top do node
