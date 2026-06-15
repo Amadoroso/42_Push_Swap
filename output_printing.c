@@ -6,20 +6,39 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 11:29:12 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/11 18:06:14 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/15 18:29:59 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Triggered in each algorithm
-// Needs "if statment" inside each algorithm the algorithm
-// Its only valid for stack_head->bench = 0
-void	ft_normal_printer(char	*op)
+// fills up info with the necessary info for printing. also prints if bench = 0
+void	ft_info_filler(t_stack **stack_head, t_info **info, char *op)
 {
-	ft_printf("%s\n", op);
+	if (!(*stack_head)->bench)
+	{
+		ft_printf("%s\n", op);
+		return ;
+	}
+	if (!strcmp(op, "sa"))
+		(*info)->sa++;
+	if (!strcmp(op, "sb"))
+		(*info)->sb++;
+	if (!strcmp(op, "pa"))
+		(*info)->pa++;
+	if (!strcmp(op, "ra"))
+		(*info)->ra++;
+	if (!strcmp(op, "rb"))
+		(*info)->rr++;
+	if (!strcmp(op, "rr"))
+		(*info)->rr++;
+	if (!strcmp(op, "rra"))
+		(*info)->rra++;
+	if (!strcmp(op, "rrb"))
+		(*info)->rrb++;
+	if (!strcmp(op, "rrr"))
+		(*info)->rrr++;
 }
-
 // Prints output with more detail (stack_head->bench = 1)
 void	ft_bench_printer(t_info **info, t_stack **stack_head)
 {
