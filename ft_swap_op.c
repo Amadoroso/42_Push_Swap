@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap_op.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:45:51 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/04 16:46:52 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/15 15:00:38 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ss : sa and sb at the same time. */
 
 #include "push_swap.h"
 
-static void	ft_swap(t_stack *values)
+void	ft_swap(t_stack *values)
 {
 	t_stack_node	*first;
 	t_stack_node	*second;

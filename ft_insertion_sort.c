@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_insertion_sort.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 16:53:28 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/14 18:14:34 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/15 15:50:13 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,19 @@ Para cada elemento em B, calcula custo de inserção em A
 Insere o mais barato
 Repete até B estar vazio*/
 
-void	ft_sort_index(t_stack *stack)
+void	ft_sort_index(t_stack **stack)
 {
 	t_stack_node	*stack_comp;
 	t_stack_node	*top;
 	
-	top = stack->top; 
+	top = (*stack)->top;
 	while (top != NULL)
 	{
 		top->index = 0;
-		stack_comp = stack->top;
+		stack_comp = (*stack)->top;
 		while (stack_comp != NULL)
 		{
-			if (top->value > stack_comp->value)
+			if (top->nbr > stack_comp->nbr)
 				top->index += 1;
 			stack_comp = stack_comp->next;
 		}
@@ -42,7 +42,7 @@ void	ft_sort_index(t_stack *stack)
 	}
 }
 
-void ft_three_sort(t_stack *stack)
+/* void ft_three_sort(t_stack *stack)
 {
 	t_stack_node *top;
 	t_stack_node *mid;
@@ -59,8 +59,6 @@ void ft_three_sort(t_stack *stack)
 	if (top->index > mid->index)
 		ft_swap_a(stack);
 }
-
-
 
 //original algorithm
 void	ft_insertion_sort(int *arr, int size)
@@ -98,4 +96,4 @@ int main (void)
 		i++;
 	}
 	return (0);
-}
+} */

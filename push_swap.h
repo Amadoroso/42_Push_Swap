@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/15 14:52:49 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/15 15:47:40 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,9 @@ void			ft_split_free(char **matrix);
 int				ft_sanitize_wspaces(char *arg);
 int				ft_iswspace(int c);
 
+// index sorting
+void			ft_sort_index(t_stack **stack);
+
 // Disorder calculator, strategy selector and preparation for printing
 t_info			*ft_disorder(t_stack **stack_head);
 float			ft_disorder_calc(t_stack **stack_head);
@@ -100,9 +103,10 @@ void			ft_rotate(t_stack *stack);
 void			ft_rotate_a(t_stack *stack);
 void			ft_rotate_b(t_stack *stack);
 void			ft_rotate_both(t_stacks *stacks);
-static void		ft_swap(t_stack *values);
+void			ft_swap(t_stack *values);
 void			ft_swap_a(t_stack *values);
 void			ft_swap_b(t_stack *values);
 void			ft_swap_both(t_stacks *stacks);
+
 
 #endif
