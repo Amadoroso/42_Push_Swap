@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/13 18:45:09 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/15 14:52:49 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,20 +91,18 @@ void			ft_normal_printer(char	*op);
 
 //operations
 void			ft_push_a(t_stack *a, t_stack *b);
-void			ft_push_b(t_stack *a, t_stack *b) ;
+void			ft_push_b(t_stack *a, t_stack *b);
 void			ft_reverse(t_stack *stack);
-void			ft_reverse_a (t_stack *stack);
-void			ft_reverse_b (t_stack *stack);
-void			ft_reverse_both (t_stacks *stacks);
+void			ft_reverse_a(t_stack *stack);
+void			ft_reverse_b(t_stack *stack);
+void			ft_reverse_both(t_stacks *stacks);
 void			ft_rotate(t_stack *stack);
-void 			ft_rotate_a(t_stack *stack);
-void 			ft_rotate_b(t_stack *stack);
-void 			ft_rotate_both (t_stacks *stacks);
+void			ft_rotate_a(t_stack *stack);
+void			ft_rotate_b(t_stack *stack);
+void			ft_rotate_both(t_stacks *stacks);
 static void		ft_swap(t_stack *values);
-void			ft_swap_a (t_stack *values);
-void			ft_swap_b (t_stack *values);
+void			ft_swap_a(t_stack *values);
+void			ft_swap_b(t_stack *values);
 void			ft_swap_both(t_stacks *stacks);
-
-
 
 #endif
