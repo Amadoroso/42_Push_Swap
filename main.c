@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:32:52 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/15 15:50:34 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/15 16:02:21 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	info = ft_disorder(&stack_head);
 	if (!info)
 		return (ft_putstr_fd("Error\n", 2), 1);
-	// PLACE HERE function that uses the disorder to know which algorithm to use!
+	ft_algorithm_routing(&stack_head, &info);
 	if (stack_head->bench)
 		ft_bench_printer(&info, &stack_head);
 
