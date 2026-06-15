@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/15 15:47:40 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/15 18:39:52 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,14 @@ t_info			*ft_disorder(t_stack **stack_head);
 float			ft_disorder_calc(t_stack **stack_head);
 char			*ft_disorder_strat(float disorder, t_stack **stack_head);
 
+// algorithm routing + algorithms
+void			ft_algorithm_routing(t_stack **stack_head, t_info **info);
+
+void			ft_medium_algorithm(t_stack	**stack_head, t_info **info);
+
 // Output printing
 void			ft_bench_printer(t_info **info, t_stack **stack_head);
-void			ft_normal_printer(char	*op);
+void			ft_info_filler(t_stack **stack_head, t_info **info, char *op);
 
 //operations
 void			ft_push_a(t_stack *a, t_stack *b);
