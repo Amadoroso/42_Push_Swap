@@ -6,7 +6,7 @@
 #    By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/01 21:01:11 by apinho-a          #+#    #+#              #
-#    Updated: 2026/06/15 18:39:03 by apinho-a         ###   ########.fr        #
+#    Updated: 2026/06/18 19:46:00 by apinho-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ LIBFT = $(LIBFT_DIR)$(LIBFT_NAME)
 FUNC = main.c argv_parser.c argv_parser_utils.c stack_func.c flag_parser.c \
  		disorder_strat.c output_printing.c ft_insertion_sort.c \
 		algorithm_routing.c medium_algorithm.c \
-		ft_push_op.c ft_revrot_op.c ft_rotate_op.c ft_swap_op.c
+		ft_push_op.c ft_revrot_op.c ft_rotate_op.c #missing stuff
 
 MACHINE_CODE = $(FUNC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 10:30:05 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/05 20:26:31 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/18 20:00:22 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,21 @@ void	ft_stack_add(t_stack **stack_head, t_stack_node *new_node)
 		traveller = traveller->next;
 	traveller->next = new_node;
 	new_node->prev = traveller;
+}
+
+// Returns the last node of a stack
+t_stack_node	*ft_lst_node(t_stack *stack)
+{
+	t_stack_node	*traveller;
+
+	if (!stack)
+		return (NULL);
+	traveller = stack->top;
+	while (traveller->next)
+	{
+		traveller = traveller->next;
+	}
+	return (traveller);
 }
 
 // Callocs new node memory

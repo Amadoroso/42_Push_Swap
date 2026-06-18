@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_op.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 15:47:08 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/05 17:14:21 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/18 20:20:57 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void ft_push_a(t_stack *a, t_stack *b)
 		a->top->prev = node; // the prev of the old top is the new top
 	a->top = node; // then the prev value become node (the new top)
 	node->prev = NULL; // prev of the new top is null
+	b->size--;
+	a->size++;
 }
 void ft_push_b(t_stack *a, t_stack *b) 
 {
@@ -49,4 +51,6 @@ void ft_push_b(t_stack *a, t_stack *b)
 		b->top->prev = node;
 	b->top = node;
 	node->prev = NULL;
+	a->size--;
+	b->size++;
 }

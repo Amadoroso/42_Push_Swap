@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_revrot_op.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 17:05:58 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/06 14:52:30 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/18 19:43:03 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ void ft_reverse(t_stack *stack)
 {
 	t_stack_node *top_node;
 	t_stack_node *last_node;
-	t_stack_node *new_last;
+/* 	t_stack_node *new_last; */
 	if (stack == NULL || stack->top == NULL || stack ->top->next == NULL)
 		return;
 	top_node = stack->top;
-	last_node = ft_lstlast(stack->top);
+	last_node = ft_lst_node(stack);
 	last_node->prev->next = NULL;
 	last_node->prev = NULL;
 	last_node->next = top_node;

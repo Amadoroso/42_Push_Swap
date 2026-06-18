@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 14:25:12 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/11 20:03:33 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/18 19:47:07 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdio.h>
+# include <stdarg.h>
 /* # include <bsd/string.h> */
 
 // part 1

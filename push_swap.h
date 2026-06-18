@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/15 18:39:52 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/18 19:42:24 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct s_info
 void			ft_stack_clear(t_stack **stack_head);
 t_stack_node	*ft_node_new(int index, int atoi_result);
 void			ft_stack_add(t_stack **stack_head, t_stack_node *new_node);
+t_stack_node	*ft_lst_node(t_stack *stack);
 t_stack			**ft_stack_creator(char *arg, t_stack **stack_head, int index);
 
 // Parsing argv parsing
@@ -88,10 +89,11 @@ t_info			*ft_disorder(t_stack **stack_head);
 float			ft_disorder_calc(t_stack **stack_head);
 char			*ft_disorder_strat(float disorder, t_stack **stack_head);
 
-// algorithm routing + algorithms
+// algorithm routing + algorithms and algorithm utils
 void			ft_algorithm_routing(t_stack **stack_head, t_info **info);
 
-void			ft_medium_algorithm(t_stack	**stack_head, t_info **info);
+t_stack			**ft_medium_algorithm(t_stack	**stack_head, t_info **info);
+int				ft_sqrt(int	n);
 
 // Output printing
 void			ft_bench_printer(t_info **info, t_stack **stack_head);
