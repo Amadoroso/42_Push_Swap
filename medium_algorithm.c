@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 15:54:13 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/18 19:56:25 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/20 17:25:33 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_stack	**ft_medium_algorithm(t_stack	**stack_head, t_info **info)
 	t_stack	*stack_b;
 	t_stack_node	*traveller;
 	int		chunk_size;
-	int		found;
+	int		search_limit;
 	int		count;
 
 	stack_a = *stack_head;
@@ -27,15 +27,16 @@ t_stack	**ft_medium_algorithm(t_stack	**stack_head, t_info **info)
 	if (!stack_b)
 		return (NULL);
 	chunk_size = ft_sqrt(stack_a->size);
+	search_limit = chunk_size;
+	count = 0;
 	while (stack_a->size)
 	{
-		found = 0;
-		while (found < chunk_size)
+		while (count < search_limit && stack_a->size)
 		{
-			if (stack_a->top->index < chunk_size)
+			if (stack_a->top->index < search_limit)
 			{
 				ft_push_b(stack_a, stack_b);
-				found++;
+				count++;
 				ft_info_filler(stack_head, info, "pb");
 			}
 			else
@@ -44,18 +45,18 @@ t_stack	**ft_medium_algorithm(t_stack	**stack_head, t_info **info)
 				ft_info_filler(stack_head, info, "ra");
 			}
 		}
-		chunk_size += chunk_size;
+		search_limit += chunk_size;
 	}
 	count = 0;
 	while (stack_b->size)
 	{
 		traveller = stack_b->top;
-		while (traveller->index < stack_b->size)
+		while (traveller->index != (stack_b->size - 1))
 		{
 			count++;
 			traveller = traveller->next;
 		}
-		if (count > stack_b->size / 2)
+		if (count >= stack_b->size / 2)
 		{
 			while (stack_b->top->index != traveller->index)
 			{
@@ -65,7 +66,7 @@ t_stack	**ft_medium_algorithm(t_stack	**stack_head, t_info **info)
 			ft_push_a(stack_a, stack_b);
 			ft_info_filler(stack_head, info, "pa");
 		}
-		if (count < stack_b->size / 2)
+		else if (count < stack_b->size / 2)
 		{
 			while (stack_b->top->index != traveller->index)
 			{
@@ -75,6 +76,7 @@ t_stack	**ft_medium_algorithm(t_stack	**stack_head, t_info **info)
 			ft_push_a(stack_a, stack_b);
 			ft_info_filler(stack_head, info, "pa");
 		}
+		count = 0;
 	}
 	ft_stack_clear(&stack_b);
 	return (stack_head);
