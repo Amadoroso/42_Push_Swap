@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 17:05:58 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/22 15:33:57 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 15:50:13 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,7 @@ void ft_reverse(t_stack *stack)
 	stack->top = last_node;
 }
 
-void ft_reverse_a (t_stack *stack)
-{
-	ft_reverse (stack);
-}
-
-void ft_reverse_b (t_stack *stack)
-{
-	ft_reverse (stack);
-}
-
-void ft_reverse_both (t_stacks *stacks)
+void	ft_reverse_both (t_stacks *stacks)
 {
 	ft_reverse(&stacks->a);
 	ft_reverse(&stacks->b);	

@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 17:05:13 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/18 19:45:10 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 15:50:18 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_rotate(t_stack *stack)
 	if (stack->top == NULL)
 		return ;
 	top_node = stack->top; // aqui esta igual ao endereco do top do node
-	last_node = ft_lst_node(stack);
+	last_node = ft_last_node(stack);
 	if (top_node == last_node)
 		return;
 	stack->top = top_node->next;
@@ -34,11 +34,6 @@ void	ft_rotate(t_stack *stack)
 	last_node->next = top_node;
 	top_node->prev = last_node;
 	top_node->next = NULL;
-}
-
-void ft_rotate_a(t_stack *stack)
-{
-	ft_rotate(stack);
 }
 
 void ft_rotate_both (t_stacks *stacks)

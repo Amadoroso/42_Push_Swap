@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 15:47:08 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/18 20:20:57 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 15:51:55 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Do nothing if b is empty.
 pb (push b): Take the first element at the top of a and put it at the top of b.
 Do nothing if a is empty. */
 
-void ft_push_a(t_stack *a, t_stack *b)
+void	ft_push_a(t_stack *a, t_stack *b)
 {
 	t_stack_node *node;
 	
@@ -36,7 +36,7 @@ void ft_push_a(t_stack *a, t_stack *b)
 	b->size--;
 	a->size++;
 }
-void ft_push_b(t_stack *a, t_stack *b) 
+void	ft_push_b(t_stack *a, t_stack *b) 
 {
 	t_stack_node	*node;
 

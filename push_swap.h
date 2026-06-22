@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 15:31:29 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 15:52:04 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,19 @@ typedef struct s_stack_node
 	int					nbr;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
-}				t_stack_node;
+}						t_stack_node;
 
+// the first element (passed argument) is the top of the stack
 typedef struct s_stack
 {
 	t_stack_node	*top;
-	// it points to the node that is currently at the top of the stack but acording to the pdf, the first element is the top of the stack
-	int				size; // variable to count how many nodes has the stack
+	int				size;
 	int				bench;
 	char			*flag;
 }					t_stack;
 
-typedef struct s_stacks // struct that stores the value of stack a and b
+// struct that stores the value of stack a and b
+typedef struct s_stacks
 {
 	t_stack	a;
 	t_stack	b;
@@ -57,7 +58,7 @@ typedef struct s_info
 	int		rra;
 	int		rrb;
 	int		rrr;
-}		t_info;
+}			t_info;
 
 // Managing stack nodes functions
 void			ft_stack_clear(t_stack **stack_head);
@@ -93,15 +94,15 @@ char			*ft_disorder_strat(float disorder, t_stack **stack_head);
 void			ft_algorithm_routing(t_stack **stack_head, t_info **info);
 
 // medium algorithm
-void			ft_chunk_sort(t_stack **stack_a, t_stack **stack_b, t_info **info);
-void			ft_final_sort(t_stack **stack_a, t_stack **stack_b, t_info **info);
+void			ft_chunk_sort(t_stack **a, t_stack **b, t_info **info);
+void			ft_final_sort(t_stack **a, t_stack **b, t_info **info);
 t_stack			**ft_medium_algorithm(t_stack	**stack_head, t_info **info);
 
 // medium algorithm utils
 int				ft_sqrt(int n);
-void			ft_push_a_info(t_stack **stack_a, t_stack **stack_b, t_info **info);
-int				ft_highest_index(t_stack **stack_b, int *count);
-void			ft_rotate_b_info(t_stack **a, t_stack **b, t_info **info, char *op);
+void			ft_pa_info(t_stack **a, t_stack **b, t_info **info);
+int				ft_highest_index(t_stack **b, int *count);
+void			ft_rb_info(t_stack **a, t_stack **b, t_info **info, char *op);
 
 // Output printing
 void			ft_bench_printer(t_info **info, t_stack **stack_head);
@@ -111,12 +112,8 @@ void			ft_info_filler(t_stack **stack_head, t_info **info, char *op);
 void			ft_push_a(t_stack *a, t_stack *b);
 void			ft_push_b(t_stack *a, t_stack *b);
 void			ft_reverse(t_stack *stack);
-void			ft_reverse_a(t_stack *stack);
-void			ft_reverse_b(t_stack *stack);
 void			ft_reverse_both(t_stacks *stacks);
 void			ft_rotate(t_stack *stack);
-void			ft_rotate_a(t_stack *stack);
-void			ft_rotate_b(t_stack *stack);
 void			ft_rotate_both(t_stacks *stacks);
 void			ft_swap(t_stack *values);
 void			ft_swap_a(t_stack *values);
