@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:45:51 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/22 17:03:07 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 18:21:26 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void	ft_swap_b(t_stack *a, t_stack *b, t_info **info)
 void	ft_swap_both(t_stacks *stacks, t_info **info)
 {
 	t_stack	*stack_a;
+
 	stack_a = &stacks->a;
-	
 	ft_swap(&stacks->a);
 	ft_swap(&stacks->b);
 	ft_info_filler(&stack_a, info, "ss");

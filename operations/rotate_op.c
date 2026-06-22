@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 17:05:13 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/22 17:03:52 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 18:20:46 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ void	ft_rotate_b(t_stack *a, t_stack *b, t_info **info)
 void	ft_rotate_both(t_stacks *stacks, t_info **info)
 {
 	t_stack	*stack_a;
+
 	stack_a = &stacks->a;
-	
 	ft_rotate(&stacks->a);
 	ft_rotate(&stacks->b);
 	ft_info_filler(&stack_a, info, "rr");

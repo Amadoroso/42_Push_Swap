@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 16:57:23 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 16:16:22 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 18:21:15 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,3 @@ int	ft_highest_index(t_stack **b, int *count)
 	}
 	return (traveller->index);
 }
-
