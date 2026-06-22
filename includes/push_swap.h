@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 17:40:48 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 18:32:40 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,14 +69,14 @@ t_stack			**ft_stack_creator(char *arg, t_stack **stack_head, int index);
 
 // Parsing argv parsing
 t_stack			*ft_argv_parser(char **argv);
-t_stack			**ft_arg_processing(char *arg, t_stack **stack_head, int *size);
+t_stack			**ft_arg_processing(char *arg, t_stack **stack_a, int *size);
 
 // Flag parsing
-int				ft_flag_parser(t_stack **stack_head, char **argv);
+int				ft_flag_parser(t_stack **stack_a, char **argv);
 char			*ft_flag_detector(char *arg);
 
 // Parsing argv utils functions
-int				ft_repetition_check(int atoi_result, t_stack **stack_head);
+int				ft_repetition_check(int atoi_result, t_stack **stack_a);
 char			**ft_sanitize_and_split(char *arg);
 void			ft_split_free(char **matrix);
 int				ft_sanitize_wspaces(char *arg);
@@ -86,25 +86,25 @@ int				ft_iswspace(int c);
 void			ft_sort_index(t_stack **stack);
 
 // Disorder calculator, strategy selector and preparation for printing
-t_info			*ft_disorder(t_stack **stack_head);
-float			ft_disorder_calc(t_stack **stack_head);
-char			*ft_disorder_strat(float disorder, t_stack **stack_head);
+t_info			*ft_disorder(t_stack **stack_a);
+float			ft_disorder_calc(t_stack **stack_a);
+char			*ft_disorder_strat(float disorder, t_stack **stack_a);
 
 // algorithm routing
-void			ft_algorithm_routing(t_stack **stack_head, t_info **info);
+void			ft_algorithm_routing(t_stack **stack_a, t_info **info);
 
 // medium algorithm
 void			ft_chunk_sort(t_stack **a, t_stack **b, t_info **info);
 void			ft_final_sort(t_stack **a, t_stack **b, t_info **info);
-t_stack			**ft_medium_algorithm(t_stack	**stack_head, t_info **info);
+t_stack			**ft_medium_algorithm(t_stack	**stack_a, t_info **info);
 
 // medium algorithm utils
 int				ft_sqrt(int n);
 int				ft_highest_index(t_stack **b, int *count);
 
 // Output printing
-void			ft_bench_printer(t_info **info, t_stack **stack_head);
-void			ft_info_filler(t_stack **stack_head, t_info **info, char *op);
+void			ft_bench_printer(t_info **info, t_stack **stack_a);
+void			ft_info_filler(t_stack **stack_a, t_info **info, char *op);
 
 //Push operations
 void			ft_push_a(t_stack *a, t_stack *b, t_info **info);

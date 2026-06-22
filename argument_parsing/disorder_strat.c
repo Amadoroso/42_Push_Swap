@@ -6,44 +6,44 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:45:56 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/08 16:29:48 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 18:29:03 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// adds the strategy complexity string to stack_head->flag (necessary for bench)
-char	*ft_disorder_strat(float disorder, t_stack **stack_head)
+// adds the strategy complexity string to stack_a->flag (necessary for bench)
+char	*ft_disorder_strat(float disorder, t_stack **stack_a)
 {
-	if (disorder == 0 || !stack_head || !*stack_head
-		|| !(*stack_head)->top || !(*stack_head)->top->next)
+	if (disorder == 0 || !stack_a || !*stack_a
+		|| !(*stack_a)->top || !(*stack_a)->top->next)
 		return (NULL);
-	if (!ft_strcmp((*stack_head)->flag, "Adaptive"))
+	if (!ft_strcmp((*stack_a)->flag, "Adaptive"))
 	{
 		if (disorder < 0.2)
-			return ((*stack_head)->flag = "Adaptive / O(n2)");
+			return ((*stack_a)->flag = "Adaptive / O(n2)");
 		if (disorder >= 0.2 && disorder < 0.5)
-			return ((*stack_head)->flag = "Adaptive / O(n√n)");
+			return ((*stack_a)->flag = "Adaptive / O(n√n)");
 		if (disorder >= 0.5)
-			return ((*stack_head)->flag = "Adaptive / O(nlogn)");
+			return ((*stack_a)->flag = "Adaptive / O(nlogn)");
 	}
 	return (NULL);
 }
 
 // Calculates the disorder of the passed (already confirmed to valid) args
-float	ft_disorder_calc(t_stack **stack_head)
+float	ft_disorder_calc(t_stack **stack_a)
 {
 	t_stack_node	*node_ptr1;
 	t_stack_node	*node_ptr2;
 	int				mistakes;
 	int				pairs;
 
-	if (!stack_head || !stack_head || !(*stack_head)->top
-		|| !(*stack_head)->top->next)
+	if (!stack_a || !stack_a || !(*stack_a)->top
+		|| !(*stack_a)->top->next)
 		return (0);
 	mistakes = 0;
 	pairs = 0;
-	node_ptr1 = (*stack_head)->top;
+	node_ptr1 = (*stack_a)->top;
 	while (node_ptr1)
 	{
 		node_ptr2 = node_ptr1->next;
@@ -56,17 +56,17 @@ float	ft_disorder_calc(t_stack **stack_head)
 		}
 		node_ptr1 = node_ptr1->next;
 	}
-	ft_disorder_strat((float) mistakes / pairs, stack_head);
+	ft_disorder_strat((float) mistakes / pairs, stack_a);
 	return ((float) mistakes / pairs);
 }
 
 // Adds the disorder value, prepared for printing to info
-t_info	*ft_disorder(t_stack **stack_head)
+t_info	*ft_disorder(t_stack **stack_a)
 {
 	t_info	*info;
 	float	disorder;
 
-	disorder = ft_disorder_calc(stack_head);
+	disorder = ft_disorder_calc(stack_a);
 	info = ft_calloc(1, sizeof(t_info));
 	if (!info)
 		return (NULL);

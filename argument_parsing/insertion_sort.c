@@ -6,32 +6,24 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 16:53:28 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/22 16:56:38 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 18:29:50 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* 
-funcao para ordenar index do struct
-funcao compara node atual com a linked list e sempre que encontrar um valor
-menor que o do nbr do node, vai somar 1 ao index
- */
- /*Manda tudo para B com pb
-Para cada elemento em B, calcula custo de inserção em A
-Insere o mais barato
-Repete até B estar vazio*/
-
-void	ft_sort_index(t_stack **stack)
+// pre-sorts stack node's index
+// Percorre stack_a and compares each node. Everytime a nbr is bigger index++
+void	ft_sort_index(t_stack **stack_a)
 {
 	t_stack_node	*stack_comp;
 	t_stack_node	*top;
 
-	top = (*stack)->top;
+	top = (*stack_a)->top;
 	while (top != NULL)
 	{
 		top->index = 0;
-		stack_comp = (*stack)->top;
+		stack_comp = (*stack_a)->top;
 		while (stack_comp != NULL)
 		{
 			if (top->nbr > stack_comp->nbr)

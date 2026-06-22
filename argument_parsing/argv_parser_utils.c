@@ -6,21 +6,21 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 18:29:43 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/05 20:29:01 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 18:28:16 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // Checks for repetitions
-int	ft_repetition_check(int atoi_result, t_stack **stack_head)
+int	ft_repetition_check(int atoi_result, t_stack **stack_a)
 {
 	int				rep;
 	t_stack_node	*traveller;
 
-	if (!stack_head)
+	if (!stack_a)
 		return (1);
-	traveller = (*stack_head)->top;
+	traveller = (*stack_a)->top;
 	rep = 0;
 	while (traveller)
 	{

@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 15:54:13 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 16:34:29 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 18:27:55 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,17 +65,17 @@ void	ft_final_sort(t_stack **a, t_stack **b, t_info **info)
 }
 
 // Sorts with medium complexity algorithm. Chunks of sqrt(size) based.
-t_stack	**ft_medium_algorithm(t_stack	**stack_head, t_info **info)
+t_stack	**ft_medium_algorithm(t_stack	**stack_a, t_info **info)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_stack	*a;
+	t_stack	*b;
 
-	stack_a = *stack_head;
-	stack_b = ft_calloc(1, sizeof(t_stack));
-	if (!stack_b)
+	a = *stack_a;
+	b = ft_calloc(1, sizeof(t_stack));
+	if (!b)
 		return (NULL);
-	ft_chunk_sort(&stack_a, &stack_b, info);
-	ft_final_sort(&stack_a, &stack_b, info);
-	ft_stack_clear(&stack_b);
-	return (stack_head);
+	ft_chunk_sort(&a, &b, info);
+	ft_final_sort(&a, &b, info);
+	ft_stack_clear(&b);
+	return (stack_a);
 }
