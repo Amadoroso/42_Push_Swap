@@ -1,43 +1,43 @@
-NAME        = push_swap
-CC          = cc
-CFLAGS      = -Wall -Wextra -Werror -g -Iincludes/
+NAME =  push_swap
 
-LIBFT_DIR   = libft/
-LIBFT_NAME  = libft.a
-LIBFT       = $(LIBFT_DIR)$(LIBFT_NAME)
+CC = cc
 
-FUNC        = argument_parsing/argv_parser.c \
-              argument_parsing/argv_parser_utils.c \
-              argument_parsing/flag_parser.c \
-              argument_parsing/disorder_strat.c \
-              argument_parsing/insertion_sort.c \
-              stack_functions/stack_func.c \
-              output_printing/output_printing.c \
-              algorithms/algorithm_routing.c \
-              algorithms/medium_algorithm.c \
-              algorithms/medium_algorithm_utils.c \
-              operations/push_op.c \
-              operations/revrot_op.c \
-              operations/rotate_op.c \
-              operations/swap_op.c \
-              main.c
+CFLAGS = -Wall -Wextra -Werror -g -Iincludes/
 
-# Mapeia os ficheiros .c para .o mantendo a estrutura de pastas
+LIBFT_DIR = libft/
+
+LIBFT_NAME = libft.a
+
+LIBFT = $(LIBFT_DIR)$(LIBFT_NAME)
+
+FUNC =	argument_parsing/argv_parser.c argument_parsing/argv_parser_utils.c \
+		argument_parsing/flag_parser.c argument_parsing/disorder_strat.c \
+		argument_parsing/insertion_sort.c \
+		stack_functions/stack_func.c \
+ 		output_printing/output_printing.c \
+		algorithms/algorithm_routing.c algorithms/medium_algorithm.c \
+		algorithms/medium_algorithm_utils.c \
+		operations/push_op.c operations/revrot_op.c operations/rotate_op.c \
+		operations/swap_op.c \
+		main.c
+
 MACHINE_CODE = $(FUNC:.c=.o)
 
-HEADER      = includes/push_swap.h
-
-all : $(NAME)
+all : $(NAME) # first rule = default one
 
 $(LIBFT) :
 	make -C $(LIBFT_DIR)
 
+$(PRINTF) :
+	make -C $(PRINTF_DIR)
+
 $(NAME) : $(MACHINE_CODE) $(LIBFT)
 	$(CC) $(CFLAGS) $(MACHINE_CODE) $(LIBFT) -o $(NAME)
 
-# Regra de compilação genérica correta para subpastas
-%.o : %.c $(HEADER)
-	$(CC) $(CFLAGS) -I./includes -c $< -o $@
+%.o : %.c push_swap.h
+	$(CC) $(CFLAGS) -c $< -o $@
+# creates the machine code .o ^
+# $< = to depedency and $@ = to target
 
 clean:
 	rm -f $(MACHINE_CODE)
