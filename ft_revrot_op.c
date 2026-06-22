@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 17:05:58 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/22 15:30:05 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 15:33:57 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void ft_reverse(t_stack *stack)
 {
 	t_stack_node *top_node;
 	t_stack_node *last_node;
-/* 	t_stack_node *new_last; */
+
 	if (stack == NULL || stack->top == NULL || stack ->top->next == NULL)
 		return;
 	top_node = stack->top;
