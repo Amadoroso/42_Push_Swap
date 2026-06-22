@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   revrot_op.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 17:05:58 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/22 18:20:51 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 22:09:41 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,15 @@ void	ft_reverse_both(t_stacks *stacks, t_info **info)
 	ft_reverse(&stacks->a);
 	ft_reverse(&stacks->b);
 	ft_info_filler(&stack_a, info, "rrr");
+}
+
+void	ft_rev_rotate_for_insertion(t_stack *stack_a, t_stack *stack_b,
+		t_stack_node *cheapest)
+{
+	while (cheapest->cost_a < 0 && cheapest->cost_b < 0)
+	{
+		cheapest->cost_a++;
+		cheapest->cost_b++;
+		ft_reverse_both();
+	}
 }

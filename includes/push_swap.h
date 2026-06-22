@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 18:32:40 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 22:17:18 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,14 @@ typedef struct s_stack_node
 {
 	int					index;
 	int					nbr;
+	int					pos;
+	int					above_mid;
+	int					cost_b;
+	int					cost_a;
+	struct s_stack_node	*target;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
-}						t_stack_node;
+}				t_stack_node;
 
 // the first element (passed argument) is the top of the stack
 typedef struct s_stack
@@ -115,6 +120,8 @@ void			ft_reverse(t_stack *stack);
 void			ft_reverse_a(t_stack *a, t_info **info);
 void			ft_reverse_b(t_stack *a, t_stack *b, t_info **info);
 void			ft_reverse_both(t_stacks *stacks, t_info **info);
+void	ft_rev_rotate_for_insertion(t_stack *stack_a, t_stack *stack_b,
+		t_stack_node *cheapest)
 
 // Rotation operations
 void			ft_rotate(t_stack *stack);

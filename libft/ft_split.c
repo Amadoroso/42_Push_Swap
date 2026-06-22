@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 18:34:11 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/05/11 18:27:37 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 21:39:32 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static int	ft_string_filler(char **string, char const *s, int j, int i)
 	return (i);
 }
 
-char static	**ft_split_actual(char **ptr_strings, char const *s,
+static char	**ft_split_actual(char **ptr_strings, char const *s,
 						char c, int index_ptr)
 {
 	char	*string;

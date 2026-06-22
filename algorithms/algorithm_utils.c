@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   medium_algorithm_utils.c                           :+:      :+:    :+:   */
+/*   algorithm_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 16:57:23 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 18:21:15 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 21:58:51 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,42 @@ int	ft_highest_index(t_stack **b, int *count)
 		traveller = traveller->next;
 	}
 	return (traveller->index);
+}
+// give the correct index to each node
+void	ft_sort_index(t_stack **stack)
+{
+	t_stack_node	*stack_comp;
+	t_stack_node	*top;
+	
+	top = (*stack)->top;
+	while (top != NULL)
+	{
+		top->index = 0;
+		stack_comp = (*stack)->top;
+		while (stack_comp != NULL)
+		{
+			if (top->nbr > stack_comp->nbr)
+				top->index += 1;
+			stack_comp = stack_comp->next;
+		}
+		top = top->next;
+	}
+}
+// algorithm to sort 3 numbers
+void ft_three_sort(t_stack *stack)
+{
+	t_stack_node *top;
+	t_stack_node *mid;
+	t_stack_node *bot;
+	
+	top = stack->top;
+	mid = top->next;
+	bot = mid->next;
+
+	if (top->index > mid->index)
+		ft_swap_a(stack);
+	if (mid->index > bot->index)
+		ft_reverse_a(stack);
+	if (top->index > mid->index)
+		ft_swap_a(stack);
 }

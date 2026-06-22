@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_op.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 17:05:13 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/22 18:20:46 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 22:09:47 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,15 @@ void	ft_rotate_both(t_stacks *stacks, t_info **info)
 	ft_rotate(&stacks->a);
 	ft_rotate(&stacks->b);
 	ft_info_filler(&stack_a, info, "rr");
+}
+
+void	ft_rotate_for_insertion(t_stack *stack_a, t_stack *stack_b,
+		t_stack_node *cheapest)
+{
+	while (cheapest->cost_a > 0 && cheapest->cost_b > 0)
+	{
+		cheapest->cost_a--;
+		cheapest->cost_b--;
+		ft_rotate_both();
+	}
 }
