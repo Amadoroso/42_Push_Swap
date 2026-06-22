@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 11:29:12 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/21 17:07:29 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 17:47:51 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,28 @@
 void	ft_info_filler(t_stack **stack_head, t_info **info, char *op)
 {
 	if (!(*stack_head)->bench)
-	{
 		ft_printf("%s\n", op);
-		return ;
-	}
-	if (!strcmp(op, "sa"))
+	else if (!ft_strcmp(op, "sa"))
 		(*info)->sa++;
-	if (!strcmp(op, "sb"))
+	else if (!ft_strcmp(op, "sb"))
 		(*info)->sb++;
-	if (!strcmp(op, "pa"))
+	else if (!ft_strcmp(op, "ss"))
+		(*info)->ss++;
+	else if (!ft_strcmp(op, "pa"))
 		(*info)->pa++;
-	if (!strcmp(op, "ra"))
+	else if (!ft_strcmp(op, "pb"))
+		(*info)->pb++;
+	else if (!ft_strcmp(op, "ra"))
 		(*info)->ra++;
-	if (!strcmp(op, "rb"))
+	else if (!ft_strcmp(op, "rb"))
 		(*info)->rr++;
-	if (!strcmp(op, "rr"))
+	else if (!ft_strcmp(op, "rr"))
 		(*info)->rr++;
-	if (!strcmp(op, "rra"))
+	else if (!ft_strcmp(op, "rra"))
 		(*info)->rra++;
-	if (!strcmp(op, "rrb"))
+	else if (!ft_strcmp(op, "rrb"))
 		(*info)->rrb++;
-	if (!strcmp(op, "rrr"))
+	else if (!ft_strcmp(op, "rrr"))
 		(*info)->rrr++;
 	(*info)->total_ops++;
 }
