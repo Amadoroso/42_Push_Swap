@@ -6,14 +6,14 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 15:52:04 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 17:10:35 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
 // struct that holds the int, aswell as other info
 typedef struct s_stack_node
@@ -100,24 +100,32 @@ t_stack			**ft_medium_algorithm(t_stack	**stack_head, t_info **info);
 
 // medium algorithm utils
 int				ft_sqrt(int n);
-void			ft_pa_info(t_stack **a, t_stack **b, t_info **info);
 int				ft_highest_index(t_stack **b, int *count);
-void			ft_rb_info(t_stack **a, t_stack **b, t_info **info, char *op);
 
 // Output printing
 void			ft_bench_printer(t_info **info, t_stack **stack_head);
 void			ft_info_filler(t_stack **stack_head, t_info **info, char *op);
 
-//operations
-void			ft_push_a(t_stack *a, t_stack *b);
-void			ft_push_b(t_stack *a, t_stack *b);
+//Push operations
+void			ft_push_a(t_stack *a, t_stack *b, t_info **info);
+void			ft_push_b(t_stack *a, t_stack *b, t_info **info);
+
+// Reverse rotation operations
 void			ft_reverse(t_stack *stack);
-void			ft_reverse_both(t_stacks *stacks);
+void			ft_reverse_a(t_stack *a, t_info **info);
+void			ft_reverse_b(t_stack *a, t_stack *b, t_info **info);
+void			ft_reverse_both(t_stacks *stacks, t_info **info);
+
+// Rotation operations
 void			ft_rotate(t_stack *stack);
-void			ft_rotate_both(t_stacks *stacks);
-void			ft_swap(t_stack *values);
-void			ft_swap_a(t_stack *values);
-void			ft_swap_b(t_stack *values);
-void			ft_swap_both(t_stacks *stacks);
+void			ft_rotate_a(t_stack *a, t_info **info);
+void			ft_rotate_b(t_stack *a, t_stack *b, t_info **info);
+void			ft_rotate_both(t_stacks *stacks, t_info **info);
+
+// Swap operations
+void			ft_swap(t_stack *stack);
+void			ft_swap_a(t_stack *a, t_info **info);
+void			ft_swap_b(t_stack *a, t_stack *b, t_info **info);
+void			ft_swap_both(t_stacks *stacks, t_info **info);
 
 #endif

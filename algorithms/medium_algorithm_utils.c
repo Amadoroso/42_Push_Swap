@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 16:57:23 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 15:50:53 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 16:16:22 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,6 @@ int	ft_sqrt(int n)
 	return (sqr - 1);
 }
 
-// Combining "ft_push_a" and "ft_info_filler"
-void	ft_pa_info(t_stack **a, t_stack **b, t_info **info)
-{
-	ft_push_a(*a, *b);
-	ft_info_filler(a, info, "pa");
-}
-
 // Runs through the stack and finds the current highest index
 int	ft_highest_index(t_stack **b, int *count)
 {
@@ -44,18 +37,3 @@ int	ft_highest_index(t_stack **b, int *count)
 	return (traveller->index);
 }
 
-// Combining "ft_rotate_b" or "ft_reverse_b" with ft_info_filler.
-// Simple char* is used to know if rotate or reverse
-void	ft_rb_info(t_stack **a, t_stack **b, t_info **info, char *op)
-{
-	if (!ft_strcmp("rrb", op))
-	{
-		ft_reverse(*b);
-		ft_info_filler(a, info, "rrb");
-	}
-	else if (!ft_strcmp("rb", op))
-	{
-		ft_rotate(*b);
-		ft_info_filler(a, info, "rb");
-	}
-}

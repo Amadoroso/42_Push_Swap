@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_revrot_op.c                                     :+:      :+:    :+:   */
+/*   revrot_op.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 17:05:58 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/22 15:50:13 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 17:03:28 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* rra (reverse rotate a): Shift down all elements of stack a by one.
-The last element becomes the first one.
-rrb (reverse rotate b): Shift down all elements of stack b by one.
-The last element becomes the first one.
-rrr : rra and rrb at the same time. */
-
-void ft_reverse(t_stack *stack)
+void	ft_reverse(t_stack *stack)
 {
-	t_stack_node *top_node;
-	t_stack_node *last_node;
+	t_stack_node	*top_node;
+	t_stack_node	*last_node;
 
 	if (stack == NULL || stack->top == NULL || stack ->top->next == NULL)
-		return;
+		return ;
 	top_node = stack->top;
 	last_node = ft_last_node(stack);
 	last_node->prev->next = NULL;
@@ -34,8 +28,27 @@ void ft_reverse(t_stack *stack)
 	stack->top = last_node;
 }
 
-void	ft_reverse_both (t_stacks *stacks)
+// reverse rotates a and prints/counts
+void	ft_reverse_a(t_stack *a, t_info **info)
 {
+	ft_reverse(a);
+	ft_info_filler(&a, info, "rra");
+}
+
+// reverse rotates b and prints/counts
+void	ft_reverse_b(t_stack *a, t_stack *b, t_info **info)
+{
+	ft_reverse(b);
+	ft_info_filler(&a, info, "rrb");
+}
+
+// reverse rotates a and b and prints/counts
+void	ft_reverse_both(t_stacks *stacks, t_info **info)
+{
+	t_stack	*stack_a;
+	stack_a = &stacks->a;
+	
 	ft_reverse(&stacks->a);
-	ft_reverse(&stacks->b);	
+	ft_reverse(&stacks->b);
+	ft_info_filler(&stack_a, info, "rrr");
 }

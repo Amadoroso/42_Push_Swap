@@ -6,7 +6,7 @@
 #    By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/01 21:01:11 by apinho-a          #+#    #+#              #
-#    Updated: 2026/06/21 17:10:36 by apinho-a         ###   ########.fr        #
+#    Updated: 2026/06/22 17:10:45 by apinho-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME =  push_swap
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -Iincludes/
 
 LIBFT_DIR = libft/
 
@@ -22,10 +22,16 @@ LIBFT_NAME = libft.a
 
 LIBFT = $(LIBFT_DIR)$(LIBFT_NAME)
 
-FUNC = main.c argv_parser.c argv_parser_utils.c stack_func.c flag_parser.c \
- 		disorder_strat.c output_printing.c ft_insertion_sort.c \
-		algorithm_routing.c medium_algorithm.c medium_algorithm_utils.c \
-		ft_push_op.c ft_revrot_op.c ft_rotate_op.c #missing stuff
+FUNC =	argument_parsing/argv_parser.c argument_parsing/argv_parser_utils.c \
+		argument_parsing/flag_parser.c argument_parsing/disorder_strat.c \
+		argument_parsing/insertion_sort.c \
+		stack_functions/stack_func.c \
+ 		output_printing/output_printing.c \
+		algorithms/algorithm_routing.c algorithms/medium_algorithm.c \
+		algorithms/medium_algorithm_utils.c \
+		operations/push_op.c operations/revrot_op.c operations/rotate_op.c \
+		operations/swap_op.c \
+		main.c
 
 MACHINE_CODE = $(FUNC:.c=.o)
 

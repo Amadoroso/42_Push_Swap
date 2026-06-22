@@ -1,55 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_op.c                                       :+:      :+:    :+:   */
+/*   swap_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:45:51 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/15 15:00:38 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 17:03:07 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* sa (swap a): Swap the first two elements at the top of stack a.
-Do nothing if there is only one or no elements.
-
-sb (swap b): Swap the first two elements at the top of stack b.
-Do nothing if there is only one or no elements.
-
-ss : sa and sb at the same time. */
-
-
 #include "push_swap.h"
 
-void	ft_swap(t_stack *values)
+// Swap the first two elements at the top of stack X
+void	ft_swap(t_stack *stack)
 {
 	t_stack_node	*first;
 	t_stack_node	*second;
-	
-	if (values->size < 2)
+
+	if (stack->size < 2)
 		return ;
-	first = values->top; // first = adress of values->top
+	first = stack->top;
 	second = first->next;
 	first->next = second->next;
-    if (second->next != NULL)
-        second->next->prev = first;
+	if (second->next != NULL)
+		second->next->prev = first;
 	first->prev = second;
 	second->next = first;
 	second->prev = NULL;
-	values->top = second;
-}
-void	ft_swap_a (t_stack *values) // the swap a and b are equal because we must choose which stack are we working on
-{
-	ft_swap(values);
+	stack->top = second;
 }
 
-void	ft_swap_b (t_stack *values)
+//Swaps a and prints/counts. Nothing if < 2 nodes.
+void	ft_swap_a(t_stack *a, t_info **info)
 {
-	ft_swap(values);
+	ft_swap(a);
+	ft_info_filler(&a, info, "sa");
 }
 
-void	ft_swap_both(t_stacks *stacks)
+//Swaps b and prints/counts.. Nothing if < 2 nodes.
+void	ft_swap_b(t_stack *a, t_stack *b, t_info **info)
 {
+	ft_swap(b);
+	ft_info_filler(&a, info, "sb");
+}
+
+// Do swap for a and b at the same time.
+void	ft_swap_both(t_stacks *stacks, t_info **info)
+{
+	t_stack	*stack_a;
+	stack_a = &stacks->a;
+	
 	ft_swap(&stacks->a);
 	ft_swap(&stacks->b);
+	ft_info_filler(&stack_a, info, "ss");
 }

@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 15:54:13 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 15:43:01 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/22 16:34:29 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,11 @@ void	ft_chunk_sort(t_stack **a, t_stack **b, t_info **info)
 		{
 			if ((*a)->top->index < search_limit)
 			{
-				ft_push_b(*a, *b);
+				ft_push_b(*a, *b, info);
 				count++;
-				ft_info_filler(a, info, "pb");
 			}
 			else
-			{
-				ft_rotate(*a);
-				ft_info_filler(a, info, "ra");
-			}
+				ft_rotate_a(*a, info);
 		}
 		search_limit += chunk_size;
 	}
@@ -55,14 +51,14 @@ void	ft_final_sort(t_stack **a, t_stack **b, t_info **info)
 		if (count >= (*b)->size / 2)
 		{
 			while ((*b)->top->index != highest_index)
-				ft_rb_info(a, b, info, "rrb");
-			ft_pa_info(a, b, info);
+				ft_reverse_b(*a, *b, info);
+			ft_push_a(*a, *b, info);
 		}
 		else if (count < (*b)->size / 2)
 		{
 			while ((*b)->top->index != highest_index)
-				ft_rb_info(a, b, info, "rb");
-			ft_pa_info(a, b, info);
+				ft_rotate_b(*a, *b, info);
+			ft_push_a(*a, *b, info);
 		}
 		count = 0;
 	}
