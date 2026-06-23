@@ -12,11 +12,10 @@ LIBFT = $(LIBFT_DIR)$(LIBFT_NAME)
 
 FUNC =	argument_parsing/argv_parser.c argument_parsing/argv_parser_utils.c \
 		argument_parsing/flag_parser.c argument_parsing/disorder_strat.c \
-		argument_parsing/insertion_sort.c \
 		stack_functions/stack_func.c \
  		output_printing/output_printing.c \
-		algorithms/algorithm_routing.c algorithms/medium_algorithm.c \
-		algorithms/medium_algorithm_utils.c \
+		algorithms/algorithm_routing.c algorithms/medium_algorithm.c algorithms/algorithm_utils.c\
+		algorithms/complex_algorithm.c algorithms/simple_algorithm.c\
 		operations/push_op.c operations/revrot_op.c operations/rotate_op.c \
 		operations/swap_op.c \
 		main.c

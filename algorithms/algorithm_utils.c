@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 16:57:23 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 21:58:51 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/23 11:04:59 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,20 +57,12 @@ void	ft_sort_index(t_stack **stack)
 	}
 }
 // algorithm to sort 3 numbers
-void ft_three_sort(t_stack *stack)
+void ft_three_sort(t_stack *stack, t_info **info)
 {
-	t_stack_node *top;
-	t_stack_node *mid;
-	t_stack_node *bot;
-	
-	top = stack->top;
-	mid = top->next;
-	bot = mid->next;
-
-	if (top->index > mid->index)
-		ft_swap_a(stack);
-	if (mid->index > bot->index)
-		ft_reverse_a(stack);
-	if (top->index > mid->index)
-		ft_swap_a(stack);
+    if (stack->top->index > stack->top->next->index)
+        ft_swap_a(stack, info);
+    if (stack->top->next->index > stack->top->next->next->index)
+        ft_reverse_a(stack, info);
+    if (stack->top->index > stack->top->next->index)
+        ft_swap_a(stack, info);
 }

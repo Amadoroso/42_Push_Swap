@@ -3,35 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:32:52 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 18:38:02 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/23 11:23:48 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	t_stack	*stack_a;
-	t_info	*info;
+    t_stack     *stack_a;
+    t_stacks    stacks;
+    t_info      *info;
 
-	if (argc <= 1)
-		return (0);
-	stack_a = ft_argv_parser(argv);
-	if (!stack_a)
-		return (ft_putstr_fd("Error\n", 2), 1);
-	ft_sort_index(&stack_a);
-	info = ft_disorder(&stack_a);
-	if (!info)
-		return (ft_putstr_fd("Error\n", 2), 1);
-	ft_algorithm_routing(&stack_a, &info);
-	if (stack_a->bench)
-		ft_bench_printer(&info, &stack_a);
-	free(info);
-	ft_stack_clear(&stack_a);
-	return (0);
+    if (argc <= 1)
+        return (0);
+    stack_a = ft_argv_parser(argv);
+    if (!stack_a)
+        return (ft_putstr_fd("Error\n", 2), 1);
+    ft_sort_index(&stack_a);
+    info = ft_disorder(&stack_a);
+    if (!info)
+        return (ft_putstr_fd("Error\n", 2), 1);
+    stacks.a = *stack_a;
+    stacks.b.top = NULL;
+	stacks.b.size = 0;
+    ft_algorithm_routing(&stack_a, &info, &stacks);
+    if (stack_a->bench)
+        ft_bench_printer(&info, &stack_a);
+    free(info);
+    ft_stack_clear(&stack_a);
+    return (0);
 }
 
 // debugging function

@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 22:17:18 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/23 11:13:54 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
+# include "limits.h"
 
 // struct that holds the int, aswell as other info
 typedef struct s_stack_node
@@ -96,16 +97,27 @@ float			ft_disorder_calc(t_stack **stack_a);
 char			*ft_disorder_strat(float disorder, t_stack **stack_a);
 
 // algorithm routing
-void			ft_algorithm_routing(t_stack **stack_a, t_info **info);
+void	ft_algorithm_routing(t_stack **stack_a, t_info **info, t_stacks *stacks);
 
 // medium algorithm
 void			ft_chunk_sort(t_stack **a, t_stack **b, t_info **info);
 void			ft_final_sort(t_stack **a, t_stack **b, t_info **info);
 t_stack			**ft_medium_algorithm(t_stack	**stack_a, t_info **info);
 
-// medium algorithm utils
+// algorithm utils
 int				ft_sqrt(int n);
 int				ft_highest_index(t_stack **b, int *count);
+void			ft_sort_index(t_stack **stack);
+void 			ft_three_sort(t_stack *stack, t_info **info);
+
+//simple algorithm
+void	ft_set_position(t_stack *stack);
+void	ft_execute_move_simple(t_stacks *stacks, t_info **info, int target_pos);
+void	ft_min_to_top(t_stacks *stacks, t_info **info);
+void	ft_simple_insertion_sort(t_stacks *stacks, t_info **info);
+
+//complex algorithm
+void	ft_radix_sort(t_stack *stack_a, t_stack *stack_b, t_info **info);
 
 // Output printing
 void			ft_bench_printer(t_info **info, t_stack **stack_a);
@@ -120,14 +132,16 @@ void			ft_reverse(t_stack *stack);
 void			ft_reverse_a(t_stack *a, t_info **info);
 void			ft_reverse_b(t_stack *a, t_stack *b, t_info **info);
 void			ft_reverse_both(t_stacks *stacks, t_info **info);
-void	ft_rev_rotate_for_insertion(t_stack *stack_a, t_stack *stack_b,
-		t_stack_node *cheapest)
+void	ft_rev_rotate_for_insertion(t_stack_node *cheapest, t_info **info,
+		t_stacks *stacks);
 
 // Rotation operations
 void			ft_rotate(t_stack *stack);
 void			ft_rotate_a(t_stack *a, t_info **info);
 void			ft_rotate_b(t_stack *a, t_stack *b, t_info **info);
 void			ft_rotate_both(t_stacks *stacks, t_info **info);
+void	ft_rotate_for_insertion(t_stack_node *cheapest, t_info **info,
+		t_stacks *stacks);
 
 // Swap operations
 void			ft_swap(t_stack *stack);

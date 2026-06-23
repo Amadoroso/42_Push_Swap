@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 17:05:13 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/22 22:09:47 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/23 10:30:58 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,13 @@ void	ft_rotate_both(t_stacks *stacks, t_info **info)
 	ft_info_filler(&stack_a, info, "rr");
 }
 
-void	ft_rotate_for_insertion(t_stack *stack_a, t_stack *stack_b,
-		t_stack_node *cheapest)
+void	ft_rotate_for_insertion(t_stack_node *cheapest, t_info **info,
+		t_stacks *stacks)
 {
 	while (cheapest->cost_a > 0 && cheapest->cost_b > 0)
 	{
 		cheapest->cost_a--;
 		cheapest->cost_b--;
-		ft_rotate_both();
+		ft_rotate_both(stacks, info);
 	}
 }
