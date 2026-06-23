@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/23 11:13:54 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/23 12:30:23 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-# include "limits.h"
+# include <limits.h>
 
-// struct that holds the int, aswell as other info
 typedef struct s_stack_node
 {
 	int					index;
@@ -30,7 +29,6 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }				t_stack_node;
 
-// the first element (passed argument) is the top of the stack
 typedef struct s_stack
 {
 	t_stack_node	*top;
@@ -39,14 +37,12 @@ typedef struct s_stack
 	char			*flag;
 }					t_stack;
 
-// struct that stores the value of stack a and b
 typedef struct s_stacks
 {
 	t_stack	a;
 	t_stack	b;
 }	t_stacks;
 
-// struct to store info for printing
 typedef struct s_info
 {
 	float	disorder;
@@ -66,84 +62,70 @@ typedef struct s_info
 	int		rrr;
 }			t_info;
 
-// Managing stack nodes functions
 void			ft_stack_clear(t_stack **stack_head);
 t_stack_node	*ft_node_new(int index, int atoi_result);
 void			ft_stack_add(t_stack **stack_head, t_stack_node *new_node);
 t_stack_node	*ft_last_node(t_stack *stack);
 t_stack			**ft_stack_creator(char *arg, t_stack **stack_head, int index);
 
-// Parsing argv parsing
 t_stack			*ft_argv_parser(char **argv);
 t_stack			**ft_arg_processing(char *arg, t_stack **stack_a, int *size);
 
-// Flag parsing
 int				ft_flag_parser(t_stack **stack_a, char **argv);
 char			*ft_flag_detector(char *arg);
 
-// Parsing argv utils functions
 int				ft_repetition_check(int atoi_result, t_stack **stack_a);
 char			**ft_sanitize_and_split(char *arg);
 void			ft_split_free(char **matrix);
 int				ft_sanitize_wspaces(char *arg);
 int				ft_iswspace(int c);
 
-// index sorting
 void			ft_sort_index(t_stack **stack);
 
-// Disorder calculator, strategy selector and preparation for printing
 t_info			*ft_disorder(t_stack **stack_a);
 float			ft_disorder_calc(t_stack **stack_a);
 char			*ft_disorder_strat(float disorder, t_stack **stack_a);
 
-// algorithm routing
-void	ft_algorithm_routing(t_stack **stack_a, t_info **info, t_stacks *stacks);
+void			ft_algorithm_routing(t_stack **stack_a,
+					t_info **info, t_stacks *stacks);
 
-// medium algorithm
 void			ft_chunk_sort(t_stack **a, t_stack **b, t_info **info);
 void			ft_final_sort(t_stack **a, t_stack **b, t_info **info);
-t_stack			**ft_medium_algorithm(t_stack	**stack_a, t_info **info);
+t_stack			**ft_medium_algorithm(t_stack **stack_a, t_info **info);
 
-// algorithm utils
 int				ft_sqrt(int n);
 int				ft_highest_index(t_stack **b, int *count);
-void			ft_sort_index(t_stack **stack);
-void 			ft_three_sort(t_stack *stack, t_info **info);
+void			ft_three_sort(t_stack *stack, t_info **info);
 
-//simple algorithm
-void	ft_set_position(t_stack *stack);
-void	ft_execute_move_simple(t_stacks *stacks, t_info **info, int target_pos);
-void	ft_min_to_top(t_stacks *stacks, t_info **info);
-void	ft_simple_insertion_sort(t_stacks *stacks, t_info **info);
+void			ft_set_position(t_stack *stack);
+void			ft_execute_move_simple(t_stacks *stacks,
+					t_info **info, int target_pos);
+void			ft_min_to_top(t_stacks *stacks, t_info **info);
+void			ft_simple_insertion_sort(t_stacks *stacks, t_info **info);
 
-//complex algorithm
-void	ft_radix_sort(t_stack *stack_a, t_stack *stack_b, t_info **info);
+void			ft_radix_sort(t_stack *stack_a, t_stack *stack_b,
+					t_info **info);
 
-// Output printing
 void			ft_bench_printer(t_info **info, t_stack **stack_a);
 void			ft_info_filler(t_stack **stack_a, t_info **info, char *op);
 
-//Push operations
 void			ft_push_a(t_stack *a, t_stack *b, t_info **info);
 void			ft_push_b(t_stack *a, t_stack *b, t_info **info);
 
-// Reverse rotation operations
 void			ft_reverse(t_stack *stack);
 void			ft_reverse_a(t_stack *a, t_info **info);
 void			ft_reverse_b(t_stack *a, t_stack *b, t_info **info);
 void			ft_reverse_both(t_stacks *stacks, t_info **info);
-void	ft_rev_rotate_for_insertion(t_stack_node *cheapest, t_info **info,
-		t_stacks *stacks);
+void			ft_rev_rotate_for_insertion(t_stack_node *cheapest,
+					t_info **info, t_stacks *stacks);
 
-// Rotation operations
 void			ft_rotate(t_stack *stack);
 void			ft_rotate_a(t_stack *a, t_info **info);
 void			ft_rotate_b(t_stack *a, t_stack *b, t_info **info);
 void			ft_rotate_both(t_stacks *stacks, t_info **info);
-void	ft_rotate_for_insertion(t_stack_node *cheapest, t_info **info,
-		t_stacks *stacks);
+void			ft_rotate_for_insertion(t_stack_node *cheapest,
+					t_info **info, t_stacks *stacks);
 
-// Swap operations
 void			ft_swap(t_stack *stack);
 void			ft_swap_a(t_stack *a, t_info **info);
 void			ft_swap_b(t_stack *a, t_stack *b, t_info **info);

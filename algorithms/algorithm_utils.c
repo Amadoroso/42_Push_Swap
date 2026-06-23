@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 16:57:23 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/23 11:04:59 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/23 12:27:12 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,13 @@ int	ft_highest_index(t_stack **b, int *count)
 	}
 	return (traveller->index);
 }
+
 // give the correct index to each node
 void	ft_sort_index(t_stack **stack)
 {
 	t_stack_node	*stack_comp;
 	t_stack_node	*top;
-	
+
 	top = (*stack)->top;
 	while (top != NULL)
 	{
@@ -56,13 +57,22 @@ void	ft_sort_index(t_stack **stack)
 		top = top->next;
 	}
 }
+
 // algorithm to sort 3 numbers
-void ft_three_sort(t_stack *stack, t_info **info)
+void	ft_three_sort(t_stack *stack, t_info **info)
 {
-    if (stack->top->index > stack->top->next->index)
-        ft_swap_a(stack, info);
-    if (stack->top->next->index > stack->top->next->next->index)
-        ft_reverse_a(stack, info);
-    if (stack->top->index > stack->top->next->index)
-        ft_swap_a(stack, info);
+	if (!stack || stack->size < 2)
+		return ;
+	if (stack->size == 2)
+	{
+		if (stack->top->index > stack->top->next->index)
+			ft_swap_a(stack, info);
+		return ;
+	}
+	if (stack->top->index > stack->top->next->index)
+		ft_swap_a(stack, info);
+	if (stack->top->next->index > stack->top->next->next->index)
+		ft_reverse_a(stack, info);
+	if (stack->top->index > stack->top->next->index)
+		ft_swap_a(stack, info);
 }

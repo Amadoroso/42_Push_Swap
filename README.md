@@ -33,7 +33,23 @@ Since the integers were inside stacks, only stack operations could be used, mean
 
 ### Algorithm routing
 
-### Sorting algorithms
+#### Medium – O(n√n)
+
+*To be documented.*
+
+#### Complex – Radix Sort O(n log n)
+
+The complex algorithm implements a binary LSD (Least Significant Bit) radix
+sort. Elements are first normalised to contiguous indices from 0 to n-1, which
+allows the algorithm to operate on bit patterns directly. Each pass examines one
+bit of every index: elements whose current bit is 0 are pushed to B, while
+elements whose current bit is 1 are rotated to the bottom of A. After each
+pass, all elements are pushed back from B to A. The number of passes is
+determined by the number of bits required to represent the largest index,
+calculated as ⌈log₂(n)⌉. For 500 elements this results in approximately 9
+passes of ~500 operations each.
+
+
 
 
 ### Instructions

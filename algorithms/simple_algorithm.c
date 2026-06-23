@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 22:10:23 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/23 10:49:04 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/23 12:27:36 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	ft_min_to_top(t_stacks *stacks, t_info **info)
 	t_stack_node	*node;
 	t_stack_node	*min_node;
 
-	ft_set_position(&stacks->a);
 	node = stacks->a.top;
 	min_node = node;
 	while (node)
@@ -59,7 +58,8 @@ void	ft_min_to_top(t_stacks *stacks, t_info **info)
 	}
 	while (stacks->a.top != min_node)
 	{
-		if (min_node->pos <= stacks->a.size / 2)
+		ft_set_position(&stacks->a);
+		if (min_node->pos < stacks->a.size / 2)
 			ft_rotate_a(&stacks->a, info);
 		else
 			ft_reverse_a(&stacks->a, info);

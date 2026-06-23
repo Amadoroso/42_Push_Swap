@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   output_printing.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 11:29:12 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 18:30:40 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/23 11:56:02 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_info_filler(t_stack **stack_a, t_info **info, char *op)
 	else if (!ft_strcmp(op, "ra"))
 		(*info)->ra++;
 	else if (!ft_strcmp(op, "rb"))
-		(*info)->rr++;
+		(*info)->rb++;
 	else if (!ft_strcmp(op, "rr"))
 		(*info)->rr++;
 	else if (!ft_strcmp(op, "rra"))

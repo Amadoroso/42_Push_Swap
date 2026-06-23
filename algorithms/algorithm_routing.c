@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 16:02:37 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/23 11:13:11 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/23 12:26:09 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@ void	ft_algorithm_routing(t_stack **stack_a, t_info **info, t_stacks *stacks)
 {
 	if (!(*info)->disorder)
 		return ;
- 	if (!ft_strcmp((*stack_a)->flag, "Simple / O(n2)"))
+	if (!ft_strcmp((*stack_a)->flag, "Simple / O(n2)"))
 		ft_simple_insertion_sort(stacks, info);
 	else if (!ft_strcmp((*stack_a)->flag, "Medium / O(n√n)"))
 		ft_medium_algorithm(stack_a, info);
- 	else if (!ft_strcmp((*stack_a)->flag, "Complex / O(nlogn)"))
+	else if (!ft_strcmp((*stack_a)->flag, "Complex / O(nlogn)"))
 		ft_radix_sort(&stacks->a, &stacks->b, info);
 	else if (!ft_strncmp((*stack_a)->flag, "Adaptive", 8))
 	{
-		if (!ft_strcmp((*stack_a)->flag + 10, "O(n2)"))
+		if (!ft_strcmp((*stack_a)->flag + 11, "O(n2)"))
 			ft_simple_insertion_sort(stacks, info);
-		else if (!ft_strcmp((*stack_a)->flag + 10, "O(n√n)"))
+		else if (!ft_strcmp((*stack_a)->flag + 11, "O(n√n)"))
 			ft_medium_algorithm(stack_a, info);
- 		else if (!ft_strcmp((*stack_a)->flag + 10, "O(nlogn)"))
-			ft_radix_sort(&stacks->b, &stacks->b, info);
+		else if (!ft_strcmp((*stack_a)->flag + 11, "O(nlogn)"))
+			ft_radix_sort(&stacks->a, &stacks->b, info);
 	}
 }

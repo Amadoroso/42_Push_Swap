@@ -6,36 +6,46 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:32:52 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/23 11:23:48 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/23 12:32:59 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+static void	ft_stacks_init(t_stacks *stacks, t_stack *stack_a)
 {
-    t_stack     *stack_a;
-    t_stacks    stacks;
-    t_info      *info;
+	stacks->a.top = stack_a->top;
+	stacks->a.size = stack_a->size;
+	stacks->a.bench = stack_a->bench;
+	stacks->a.flag = stack_a->flag;
+	stacks->b.top = NULL;
+	stacks->b.size = 0;
+	stacks->b.flag = NULL;
+}
 
-    if (argc <= 1)
-        return (0);
-    stack_a = ft_argv_parser(argv);
-    if (!stack_a)
-        return (ft_putstr_fd("Error\n", 2), 1);
-    ft_sort_index(&stack_a);
-    info = ft_disorder(&stack_a);
-    if (!info)
-        return (ft_putstr_fd("Error\n", 2), 1);
-    stacks.a = *stack_a;
-    stacks.b.top = NULL;
-	stacks.b.size = 0;
-    ft_algorithm_routing(&stack_a, &info, &stacks);
-    if (stack_a->bench)
-        ft_bench_printer(&info, &stack_a);
-    free(info);
-    ft_stack_clear(&stack_a);
-    return (0);
+int	main(int argc, char **argv)
+{
+	t_stack		*stack_a;
+	t_stacks	stacks;
+	t_info		*info;
+
+	if (argc <= 1)
+		return (0);
+	stack_a = ft_argv_parser(argv);
+	if (!stack_a)
+		return (ft_putstr_fd("Error\n", 2), 1);
+	ft_sort_index(&stack_a);
+	info = ft_disorder(&stack_a);
+	if (!info)
+		return (ft_putstr_fd("Error\n", 2), 1);
+	ft_stacks_init(&stacks, stack_a);
+	ft_algorithm_routing(&stack_a, &info, &stacks);
+	if (stacks.a.bench)
+		ft_bench_printer(&info, &stack_a);
+	free(info);
+	stack_a->top = NULL;
+	ft_stack_clear(&stack_a);
+	return (0);
 }
 
 // debugging function
