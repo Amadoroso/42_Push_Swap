@@ -6,12 +6,13 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 22:14:39 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/23 12:27:26 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/23 14:49:41 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// fuction to count how many bits we need to count the index 
 static int	get_max_bits(t_stack *stack)
 {
 	int	max_index;
