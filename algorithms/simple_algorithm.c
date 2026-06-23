@@ -6,11 +6,12 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 22:10:23 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/23 16:21:47 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/23 16:28:20 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
 void	ft_set_position(t_stack *stack)
 {
 	t_stack_node	*node;

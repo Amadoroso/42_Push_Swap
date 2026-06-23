@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 11:29:12 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/23 16:21:53 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/23 16:36:30 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 // fills up info with the necessary info for printing. also prints if bench = 0
 void	ft_info_filler(t_stack **stack_a, t_info **info, char *op)
 {
-	if (!(*stack_a)->bench)
+	(void) stack_a;
+	/* if (!(*stack_a)->bench) */
 		ft_printf(1, "%s\n", op);
-	else if (!ft_strcmp(op, "sa"))
+	if (!ft_strcmp(op, "sa"))
 		(*info)->sa++;
 	else if (!ft_strcmp(op, "sb"))
 		(*info)->sb++;
@@ -58,6 +59,6 @@ void	ft_bench_printer(t_info **info, t_stack **stack_a)
 	ft_printf(2, "ss: %i pa: %i ", (*info)->ss, (*info)->pa);
 	ft_printf(2, "pb: %i\n", (*info)->pb);
 	ft_printf(2, "[bench] ra: %i rb: %i ", (*info)->ra, (*info)->rb);
-	ft_printf(2,"rr: %i rra: %i ", (*info)->rr, (*info)->rra);
+	ft_printf(2, "rr: %i rra: %i ", (*info)->rr, (*info)->rra);
 	ft_printf(2, "rrb: %i rrr: %i\n", (*info)->rrb, (*info)->rrr);
 }
