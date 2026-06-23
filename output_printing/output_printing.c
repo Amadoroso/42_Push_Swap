@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 11:29:12 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/23 16:36:30 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/23 16:47:02 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 void	ft_info_filler(t_stack **stack_a, t_info **info, char *op)
 {
 	(void) stack_a;
-	/* if (!(*stack_a)->bench) */
-		ft_printf(1, "%s\n", op);
+	(*info)->total_ops++;
+	ft_printf(1, "%s\n", op);
 	if (!ft_strcmp(op, "sa"))
 		(*info)->sa++;
 	else if (!ft_strcmp(op, "sb"))
@@ -40,7 +40,6 @@ void	ft_info_filler(t_stack **stack_a, t_info **info, char *op)
 		(*info)->rrb++;
 	else if (!ft_strcmp(op, "rrr"))
 		(*info)->rrr++;
-	(*info)->total_ops++;
 }
 
 // Prints output with more detail (stack_a->bench = 1)
