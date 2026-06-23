@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 14:25:12 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/18 19:47:07 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/23 16:03:11 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_strcmp(const char *s1, const char *s2);
 
 // printf
-int		ft_printf(const char *formatter, ...);
-int		ft_formatter_check(char formatter, va_list args);
+int		ft_printf(int fd, const char *formatter, ...);
+int		ft_formatter_check(char formatter, va_list args, int fd);
+int		ft_pointer_printer(unsigned long long address, int fd);
 int		ft_putchar1_fd(char c, int fd);
 int		ft_putstr1_fd(char *s, int fd);
 int		ft_putnbr1_fd(int n, int fd);

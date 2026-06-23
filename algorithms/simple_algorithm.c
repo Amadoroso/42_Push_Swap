@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   simple_algorithm.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 22:10:23 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/23 12:27:36 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/23 16:21:47 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
+#include "../push_swap.h"
 void	ft_set_position(t_stack *stack)
 {
 	t_stack_node	*node;

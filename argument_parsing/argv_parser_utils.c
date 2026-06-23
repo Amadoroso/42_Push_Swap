@@ -6,11 +6,11 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 18:29:43 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 18:28:16 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/23 15:58:45 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 // Checks for repetitions
 int	ft_repetition_check(int atoi_result, t_stack **stack_a)

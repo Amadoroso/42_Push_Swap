@@ -6,11 +6,11 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:45:51 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/22 18:21:26 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/23 15:59:09 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 // Swap the first two elements at the top of stack X
 void	ft_swap(t_stack *stack)

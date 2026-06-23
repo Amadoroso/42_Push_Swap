@@ -6,11 +6,11 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:37:35 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 18:28:36 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/23 15:58:49 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 // Processes the current argument being parsed in argv_parser
 t_stack	**ft_arg_processing(char *arg, t_stack **stack_a, int *size)

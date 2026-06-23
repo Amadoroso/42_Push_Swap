@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm_routing.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 16:02:37 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/23 12:26:09 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/23 16:21:40 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 // chooses the sorting algorithm to be used
 void	ft_algorithm_routing(t_stack **stack_a, t_info **info, t_stacks *stacks)

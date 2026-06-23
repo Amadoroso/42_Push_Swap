@@ -6,11 +6,11 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:45:56 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 18:29:03 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/23 15:58:52 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 // adds the strategy complexity string to stack_a->flag (necessary for bench)
 char	*ft_disorder_strat(float disorder, t_stack **stack_a)

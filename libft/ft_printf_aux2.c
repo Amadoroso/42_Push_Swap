@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 13:35:01 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/11 20:04:24 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/23 15:36:34 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_putstr1_fd(char *s, int fd)
 	len = 0;
 	if (!s)
 	{
-		write(1, "(null)", 6);
+		write(fd, "(null)", 6);
 		return (6);
 	}
 	while (*(s + len))

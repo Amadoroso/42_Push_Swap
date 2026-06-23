@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 19:51:42 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/11 20:04:27 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/23 15:37:55 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_putnbr1_fd(int n, int fd)
 	count = 0;
 	if (n == -2147483648)
 	{
-		count = ft_putstr1_fd("-2147483648", 1);
+		count = ft_putstr1_fd("-2147483648", fd);
 		return (count);
 	}
 	if (n < 0)

@@ -6,11 +6,11 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 15:54:13 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 18:27:55 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/23 15:58:39 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 // 1. Roughly orders by index in chunks of sqrt(size) in B. Scales n^1/2
 void	ft_chunk_sort(t_stack **a, t_stack **b, t_info **info)

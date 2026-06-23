@@ -6,11 +6,11 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 10:30:05 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 15:30:30 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/23 15:59:19 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 // Frees memory for a given list (stack) of nodes (stack_node)
 void	ft_stack_clear(t_stack **stack_head)

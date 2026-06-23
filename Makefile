@@ -2,7 +2,7 @@ NAME =  push_swap
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -g -Iincludes/
+CFLAGS = -Wall -Wextra -Werror -g
 
 LIBFT_DIR = libft/
 
@@ -26,9 +26,6 @@ all : $(NAME) # first rule = default one
 
 $(LIBFT) :
 	make -C $(LIBFT_DIR)
-
-$(PRINTF) :
-	make -C $(PRINTF_DIR)
 
 $(NAME) : $(MACHINE_CODE) $(LIBFT)
 	$(CC) $(CFLAGS) $(MACHINE_CODE) $(LIBFT) -o $(NAME)

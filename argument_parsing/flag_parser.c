@@ -6,11 +6,11 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 17:17:01 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/22 18:29:12 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/23 15:58:55 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 // Detects which flag is in the arguments
 char	*ft_flag_detector(char *arg)

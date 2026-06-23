@@ -6,11 +6,11 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 15:47:08 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/22 16:58:56 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/23 15:58:58 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 // Take the first element at the top of b and put it at the top of a
 void	ft_push_a(t_stack *a, t_stack *b, t_info **info)

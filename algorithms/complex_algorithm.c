@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   complex_algorithm.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 22:14:39 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/23 14:49:41 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/23 16:21:45 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 // fuction to count how many bits we need to count the index 
 static int	get_max_bits(t_stack *stack)
