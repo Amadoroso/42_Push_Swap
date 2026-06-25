@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:32:52 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/23 12:32:59 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/25 16:46:35 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int	main(int argc, char **argv)
 	if (stacks.a.bench)
 		ft_bench_printer(&info, &stack_a);
 	free(info);
-	stack_a->top = NULL;
 	ft_stack_clear(&stack_a);
 	return (0);
 }

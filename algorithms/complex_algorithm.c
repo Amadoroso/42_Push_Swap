@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   complex_algorithm.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 22:14:39 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/23 16:21:45 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/25 17:48:28 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,29 +25,38 @@ static int	get_max_bits(t_stack *stack)
 	return (max_bits);
 }
 
-void	ft_radix_sort(t_stack *stack_a, t_stack *stack_b, t_info **info)
+static void	radix_pass(t_stack *a, t_stack *b, int bit, t_info **info)
 {
-	int	i;
 	int	j;
 	int	size;
-	int	max_bits;
 
-	i = 0;
-	size = stack_a->size;
-	max_bits = get_max_bits(stack_a);
-	while (i < max_bits)
+	j = 0;
+	size = a->size;
+	while (j < size)
 	{
-		j = 0;
-		while (j < size)
-		{
-			if (((stack_a->top->index >> i) & 1) == 1)
-				ft_rotate_a(stack_a, info);
-			else
-				ft_push_b(stack_a, stack_b, info);
-			j++;
-		}
-		while (stack_b->size > 0)
-			ft_push_a(stack_a, stack_b, info);
+		if (((a->top->index >> bit) & 1) == 1)
+			ft_rotate_a(a, info);
+		else
+			ft_push_b(a, b, info);
+		j++;
+	}
+	while (b->size > 0)
+		ft_push_a(a, b, info);
+}
+
+void	ft_radix_sort(t_stack *stack_a, t_info **info)
+{
+	t_stack	*stack_b;
+	int		i;
+
+	stack_b = ft_calloc(1, sizeof(t_stack));
+	if (!stack_b)
+		return ;
+	i = 0;
+	while (i < get_max_bits(stack_a))
+	{
+		radix_pass(stack_a, stack_b, i, info);
 		i++;
 	}
+	ft_stack_clear(&stack_b);
 }

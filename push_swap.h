@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/23 16:24:02 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/25 17:49:34 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,13 +98,13 @@ int				ft_highest_index(t_stack **b, int *count);
 void			ft_three_sort(t_stack *stack, t_info **info);
 
 void			ft_set_position(t_stack *stack);
-void			ft_execute_move_simple(t_stacks *stacks,
-					t_info **info, int target_pos);
+void			ft_execute_move_simple(t_stacks *stacks, t_info **info,
+					int target_pos);
 void			ft_min_to_top(t_stacks *stacks, t_info **info);
-void			ft_simple_insertion_sort(t_stacks *stacks, t_info **info);
-
-void			ft_radix_sort(t_stack *stack_a, t_stack *stack_b,
+void			ft_simple_insertion_sort(t_stack **stack_a, t_stacks *stacks,
 					t_info **info);
+
+void			ft_radix_sort(t_stack *stack_a, t_info **info);
 
 void			ft_bench_printer(t_info **info, t_stack **stack_a);
 void			ft_info_filler(t_stack **stack_a, t_info **info, char *op);

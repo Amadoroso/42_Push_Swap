@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_algorithm.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 22:10:23 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/23 16:28:20 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/06/25 17:49:26 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,31 +66,37 @@ void	ft_min_to_top(t_stacks *stacks, t_info **info)
 	}
 }
 
-void	ft_simple_insertion_sort(t_stacks *stacks, t_info **info)
+static int	ft_get_target_pos(t_stacks *stacks)
 {
 	t_stack_node	*node_a;
 	int				target_pos;
 	int				pos;
 
+	ft_set_position(&stacks->a);
+	node_a = stacks->a.top;
+	target_pos = 0;
+	pos = 0;
+	while (node_a)
+	{
+		if (stacks->b.top->index > node_a->index)
+			target_pos = pos + 1;
+		pos++;
+		node_a = node_a->next;
+	}
+	if (target_pos > stacks->a.size / 2)
+		target_pos = target_pos - stacks->a.size;
+	return (target_pos);
+}
+
+void	ft_simple_insertion_sort(t_stack **stack_a, t_stacks *stacks,
+		t_info **info)
+{
 	while (stacks->a.size > 3)
 		ft_push_b(&stacks->a, &stacks->b, info);
 	ft_three_sort(&stacks->a, info);
 	while (stacks->b.size > 0)
-	{
-		ft_set_position(&stacks->a);
-		node_a = stacks->a.top;
-		target_pos = 0;
-		pos = 0;
-		while (node_a)
-		{
-			if (stacks->b.top->index > node_a->index)
-				target_pos = pos + 1;
-			pos++;
-			node_a = node_a->next;
-		}
-		if (target_pos > stacks->a.size / 2)
-			target_pos = target_pos - stacks->a.size;
-		ft_execute_move_simple(stacks, info, target_pos);
-	}
+		ft_execute_move_simple(stacks, info, ft_get_target_pos(stacks));
 	ft_min_to_top(stacks, info);
+	(*stack_a)->top = stacks->a.top;
+	(*stack_a)->size = stacks->a.size;
 }
