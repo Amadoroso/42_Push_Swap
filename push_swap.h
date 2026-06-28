@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 21:36:02 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/06/25 17:49:34 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/28 19:15:23 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@ typedef struct s_stack_node
 	int					index;
 	int					nbr;
 	int					pos;
-	int					above_mid;
-	int					cost_b;
-	int					cost_a;
 	struct s_stack_node	*target;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
@@ -116,15 +113,11 @@ void			ft_reverse(t_stack *stack);
 void			ft_reverse_a(t_stack *a, t_info **info);
 void			ft_reverse_b(t_stack *a, t_stack *b, t_info **info);
 void			ft_reverse_both(t_stacks *stacks, t_info **info);
-void			ft_rev_rotate_for_insertion(t_stack_node *cheapest,
-					t_info **info, t_stacks *stacks);
 
 void			ft_rotate(t_stack *stack);
 void			ft_rotate_a(t_stack *a, t_info **info);
 void			ft_rotate_b(t_stack *a, t_stack *b, t_info **info);
 void			ft_rotate_both(t_stacks *stacks, t_info **info);
-void			ft_rotate_for_insertion(t_stack_node *cheapest,
-					t_info **info, t_stacks *stacks);
 
 void			ft_swap(t_stack *stack);
 void			ft_swap_a(t_stack *a, t_info **info);

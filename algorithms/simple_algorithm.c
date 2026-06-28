@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 22:10:23 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/25 17:49:26 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/28 19:25:12 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,28 @@ void	ft_set_position(t_stack *stack)
 		node->pos = i++;
 		node = node->next;
 	}
+}
+
+static int	ft_get_target_pos(t_stacks *stacks)
+{
+	t_stack_node	*node_a;
+	int				target_pos;
+	int				pos;
+
+	ft_set_position(&stacks->a);
+	node_a = stacks->a.top;
+	target_pos = 0;
+	pos = 0;
+	while (node_a)
+	{
+		if (stacks->b.top->index > node_a->index)
+			target_pos = pos + 1;
+		pos++;
+		node_a = node_a->next;
+	}
+	if (target_pos > stacks->a.size / 2)
+		target_pos = target_pos - stacks->a.size;
+	return (target_pos);
 }
 
 void	ft_execute_move_simple(t_stacks *stacks, t_info **info, int target_pos)
@@ -64,28 +86,6 @@ void	ft_min_to_top(t_stacks *stacks, t_info **info)
 		else
 			ft_reverse_a(&stacks->a, info);
 	}
-}
-
-static int	ft_get_target_pos(t_stacks *stacks)
-{
-	t_stack_node	*node_a;
-	int				target_pos;
-	int				pos;
-
-	ft_set_position(&stacks->a);
-	node_a = stacks->a.top;
-	target_pos = 0;
-	pos = 0;
-	while (node_a)
-	{
-		if (stacks->b.top->index > node_a->index)
-			target_pos = pos + 1;
-		pos++;
-		node_a = node_a->next;
-	}
-	if (target_pos > stacks->a.size / 2)
-		target_pos = target_pos - stacks->a.size;
-	return (target_pos);
 }
 
 void	ft_simple_insertion_sort(t_stack **stack_a, t_stacks *stacks,
