@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 17:05:58 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/28 19:13:37 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/29 08:37:46 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,3 @@ void	ft_reverse_both(t_stacks *stacks, t_info **info)
 	ft_reverse(&stacks->b);
 	ft_info_filler(&stack_a, info, "rrr");
 }
-
-

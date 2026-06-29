@@ -6,7 +6,7 @@
 /*   By: jtravanc <jtravanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 17:05:13 by jtravanc          #+#    #+#             */
-/*   Updated: 2026/06/28 19:13:40 by jtravanc         ###   ########.fr       */
+/*   Updated: 2026/06/29 08:37:53 by jtravanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,3 @@ void	ft_rotate_both(t_stacks *stacks, t_info **info)
 	ft_rotate(&stacks->b);
 	ft_info_filler(&stack_a, info, "rr");
 }
-
-
